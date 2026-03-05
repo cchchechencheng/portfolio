@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Me | Qianyi's Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+    /* About Page Specific Styles */
+    .about-container {
+        padding: 120px 40px 80px;
+        max-width: 1400px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 4fr 6fr; /* 40% / 60% Split */
+        gap: 80px;
+        min-height: calc(100vh - 160px);
+    }
+
+    /* Left Column: Sticky Profile */
+    .about-left {
+        position: sticky;
+        top: 120px;
+        height: fit-content;
+        display: flex;
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .profile-img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 3/4;
+        object-fit: cover;
+        background-color: #ddd; /* Placeholder background */
+    }
+
+    .btn-download {
+        display: inline-block;
+        padding: 15px 30px;
+        font-size: 1rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        text-align: center;
+        color: #1a1a1a;
+        background-color: transparent;
+        border: 2px solid #1a1a1a;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .btn-download:hover {
+        background-color: #1a1a1a;
+        color: #F2F2F2;
+    }
+
+    /* Right Column: Scrollable Content */
+    .about-right {
+        display: flex;
+        flex-direction: column;
+        gap: 60px;
+    }
+
+    .about-title {
+        font-size: clamp(4rem, 8vw, 8rem); /* Huge H1 */
+        font-weight: 800;
+        line-height: 0.9;
+        margin: 0;
+        letter-spacing: -2px;
+        color: #1a1a1a;
+    }
+
+    .about-section h2 {
+        font-size: 1.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        color: #1a1a1a;
+    }
+
+    .about-section p {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .about-section p:last-child {
+        margin-bottom: 0;
+    }
+
+    /* Personal Touch: Cat Section */
+    .cat-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .cat-img {
+        max-width: 300px;
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+        background-color: #ccc;
+        transform: rotate(2deg); /* Slightly casual/playful */
+        transition: transform 0.3s ease;
+    }
+
+    .cat-img:hover {
+        transform: rotate(0deg);
+    }
+
+    /* Contact Links */
+    .contact-links {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .contact-link {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #1a1a1a;
+        text-decoration: none;
+        position: relative;
+        width: fit-content;
+    }
+
+    .contact-link::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #1a1a1a;
+        transform: scaleX(0);
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+
+    .contact-link:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 900px) {
+        .about-container {
+            grid-template-columns: 1fr; /* Stack vertically */
+            gap: 60px;
+            padding: 100px 20px 60px;
+        }
+
+        .about-left {
+            position: static;
+            max-width: 500px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .about-title {
+            font-size: clamp(3rem, 12vw, 5rem);
+            margin-bottom: 20px;
+        }
+    }
+</style>
+</head>
+<body class="is-project">
+
+    <!-- Navigation -->
+    <nav class="project-nav">
+        <a href="index.html" class="project-logo">Qianyi.</a>
+    </nav>
+
+    <!-- About Container -->
+    <main class="about-container">
+        
+        <!-- Left Column: Photo -->
+        <aside class="about-left">
+            <img src="assets/about-me/profile.jpg" alt="Portrait of Qianyi (Viola)" class="profile-img">
+        </aside>
+
+        <!-- Right Column: Content -->
+        <section class="about-right">
+            
+            <!-- Title & Resume -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 30px;">
+                <h1 class="about-title">Hi,<br>ich bin Qianyi Cheng.</h1>
+                <a href="assets/about-me/Qianyi_Cheng_CV.pdf" download="Qianyi_Cheng_CV.pdf" class="btn-download">
+                    Download Resume (PDF)
+                </a>
+            </div>
+
+            <!-- Bio -->
+            <div class="about-section">
+                <h2>Über mich</h2>
+                <p>Ich studiere Interaction Design an der HfG Offenbach und stehe kurz vor meinem Diplom. Gerade suche ich ein Praktikum, bei dem ich wirklich etwas lernen kann.</p>
+                <p>Meine größte Stärke ist nicht ein einzelnes Tool oder eine bestimmte Methode, sondern Verknüpfungen herzustellen. Ich sammle Impulse aus allen Richtungen: Bücher, Gespräche, alltägliche Beobachtungen, fachfremde Felder. Irgendwann verdichten sich diese Fragmente zu Mustern. Der Moment, in dem verstreute Punkte zu einer schlüssigen Idee zusammenfallen, ist der Teil von Gestaltung, der mich am meisten antreibt. Die Synthese. Das Emergente.</p>
+            </div>
+
+            <!-- Design Approach -->
+            <div class="about-section">
+                <h2>Wie ich denke</h2>
+                <p>Ich bin keine Spezialistin, sondern eine Generalistin mit ausgeprägter Mustererkennung. Ich sehe Zusammenhänge zwischen Dingen, die auf den ersten Blick nichts miteinander zu tun haben, und habe gelernt, diesem Instinkt zu vertrauen. Ich eigne mir Neues schnell an, denke über Disziplinen hinweg und bringe unerwartete Referenzen in Projekte ein.</p>
+                <p>Aktuell beschäftige ich mich mit der Frage, wie KI die Denkweise von Designer:innen verändert. Nicht nur als Werkzeug, sondern als gestalterisches Material. Vibe Coding, KI-gestützte Ideenfindung, Mensch-KI-Kollaboration: Das sind für mich keine Schlagwörter, sondern meine tatsächliche Arbeitsweise.</p>
+            </div>
+
+            <!-- Personal Touch (Cat) -->
+            <div class="about-section">
+                <h2>Off-Screen</h2>
+                <p>Wenn ich nicht gerade gestalte, wird meine Zeit größtenteils von meinem Maine-Coon-Vorgesetzten verwaltet: <strong>Cheng Cai (程财)</strong>.</p>
+                <div class="cat-container">
+                    <img src="assets/about-me/cai.jpg" alt="Cheng Cai the Maine Coon" class="cat-img">
+                    <small style="color: #666; font-style: italic;">Chefkritiker. Flauschig. Unerbittlich.</small>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="about-section">
+                <h2>Kontakt</h2>
+                <div class="contact-links">
+                    <a href="mailto:chengqianyi2017@outlook.com" class="contact-link">E-Mail ↗</a>
+                    <a href="https://linkedin.com/in/qianyi-cheng-b79891297" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn ↗</a>
+                    <a href="https://instagram.com/qych.8991" target="_blank" rel="noopener noreferrer" class="contact-link">Instagram ↗</a>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div>Based in Germany</div>
+        <div>© 2026 Qianyi Cheng</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sinfonie | Qianyi's Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+    /* Reuse styles from Study Buddy / AR Cycling */
+    
+    /* 2. Hero Section */
+    .project-hero {
+        width: 100%;
+        height: 100vh;
+        background-image: url('assets/home/sinfonie-hero-image.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10%;
+        box-sizing: border-box;
+        color: white;
+        position: relative;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.3); /* Slightly lighter overlay for nature vibe */
+        z-index: 1;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+    .hero-title {
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        font-weight: 700;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+
+    .hero-intro {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    .hero-tags {
+        font-size: 0.9rem;
+        font-weight: 600;
+        opacity: 0.8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .hero-tags div { margin-bottom: 8px; }
+
+    /* 3. Content Sections */
+    .content-section {
+        padding: 120px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 35% 1fr;
+        gap: 80px;
+    }
+
+    .section-header { position: sticky; top: 100px; height: fit-content; }
+
+    .section-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1A1A1A;
+        margin: 0;
+        line-height: 1.2;
+        text-transform: uppercase;
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    .section-body {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    .section-body p { margin-bottom: 20px; }
+    .section-body ul { padding-left: 20px; margin-bottom: 20px; }
+    .section-body li { margin-bottom: 10px; }
+
+    /* Images & Captions */
+    .section-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 40px 0 10px 0;
+        border-radius: 4px;
+        /* No shadow for diagrams, maybe for photos? Keeping it clean. */
+    }
+
+    .figure-caption {
+        font-size: 0.85rem;
+        color: #666;
+        margin-bottom: 40px;
+        display: block;
+        font-style: italic;
+    }
+
+    /* Grids */
+    .grid-2x2 {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 40px 0;
+    }
+
+    .grid-4col {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0; /* 移除间距，无缝拼接 */
+        margin: 40px 0;
+    }
+
+    .grid-4col .grid-item img {
+        width: 100%;
+        aspect-ratio: 3/4; /* 强制统一比例 (如3:4或1:1)，确保高度一致 */
+        object-fit: cover; /* 裁剪填充 */
+        border-radius: 0; /* 无缝拼接时移除圆角 */
+    }
+
+    .grid-4col .figure-caption {
+        text-align: center; /* 居中对齐 */
+        margin-top: 10px;
+        font-size: 0.8rem;
+        line-height: 1.3;
+    }
+
+    .grid-3col {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        margin: 40px 0;
+    }
+
+    /* Vertical Image Stack */
+    .image-stack img {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin-bottom: 30px;
+        border-radius: 4px;
+    }
+
+    .grid-item img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        display: block;
+    }
+
+    /* Section 8: End Hero */
+    .end-hero-section {
+        width: 100%;
+        margin-top: 0;
+        position: relative;
+    }
+    
+    .end-hero-text {
+        max-width: 1200px; /* 增加宽度，减少换行 */
+        margin: 0 auto;
+        padding: 80px 40px;
+        text-align: center;
+        font-size: 1.5rem;
+        line-height: 1.6;
+        color: #1a1a1a;
+    }
+
+    .end-hero-image {
+        width: 100%;
+        height: 100vh;
+        object-fit: cover;
+        object-position: center;
+        display: block;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        .content-section {
+            grid-template-columns: 1fr;
+            padding: 60px 20px;
+            gap: 20px;
+        }
+        .section-header { position: static; margin-bottom: 20px; }
+        .section-title { font-size: 2rem; }
+        .grid-2x2, .grid-3col, .grid-4col { grid-template-columns: 1fr; }
+        .grid-4col .grid-item img { aspect-ratio: auto; /* 手机端恢复自适应高度 */ }
+        .project-hero { padding: 0 20px; }
+        .project-nav { padding: 0 20px; }
+    }
+
+</style>
+</head>
+<body class="is-project">
+
+    <!-- Navigation -->
+    <nav class="project-nav">
+        <a href="index.html" class="project-logo">Qianyi.</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="project-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Sinfonie</h1>
+            <div class="hero-subtitle">Ökologie trifft Öffentlichkeit.</div>
+            <div class="hero-intro">Ein transformierbares Entwurfssystem für das Mainufer Offenbach – modular, ökologisch, menschlich.</div>
+            <div class="hero-tags">
+                <div>#Urban Design</div>
+                <div>#Product Design</div>
+                <div>#Sustainability</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1: Kernbotschaft -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Kern-<br>botschaft</h2>
+        </div>
+        <div class="section-body">
+            <p>Dies ist ein städtebauliches Re-Design-Projekt für das Offenbacher Mainufer, das darauf abzielt, untergenutzte graue Infrastrukturen in einen grünen, gemeinschaftlich genutzten öffentlichen Raum zu verwandeln. Durch ein modulares Landschaftssystem wird ein organisches Zusammenspiel zwischen Natur und menschlicher Aktivität ermöglicht. Das Projekt bietet einen nachhaltigen und anpassungsfähigen Raumprototyp für zukünftige Stadtentwicklungen im Kontext des Klima- und Gesellschaftswandels.</p>
+        </div>
+    </section>
+
+    <!-- Section 2: Projektkontext -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Projekt-<br>kontext<br>&<br>Gestaltungs-<br>anlass</h2>
+        </div>
+        <div class="section-body">
+            <ul>
+                <li>Das Offenbacher Mainufer ist stark versiegelt und wird überwiegend als Parkplatz genutzt – trotz seines ökologischen Potenzials.</li>
+                <li>Wiederkehrende Überschwemmungen und ein veralteter Deich zeigen den Handlungsbedarf.</li>
+                <li>Es braucht eine nachhaltige Neugestaltung, die Natur integriert und öffentlichen Raum zurückgewinnt.</li>
+            </ul>
+            
+            <div class="grid-4col">
+                <div class="grid-item">
+                    <img src="assets/sinfonie/flohmarkt.jpg" alt="Flohmarkt">
+                    <span class="figure-caption">Flohmarkt am Samstag</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/sinfonie/1860.jpg" alt="Historische Überschwemmung">
+                    <span class="figure-caption">In den 1860er Jahren war der Platz fast ganz überschwemmt</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/sinfonie/hochwasserschutz.jpg" alt="Hochwasserschutz">
+                    <span class="figure-caption">Medien fordern besseren Hochwasserschutz</span>
+                </div>
+                <div class="grid-item">
+                    <img src="assets/sinfonie/deichabsenkung.jpg" alt="Deichabsenkung">
+                    <span class="figure-caption">Deichabsenkung – abgelehnt</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: Nutzungsanalyse -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Nutzungs-<br>analyse<br>&<br>Beobachtungen</h2>
+        </div>
+        <div class="section-body">
+            <p>Um fundierte Gestaltungsentscheidungen zu treffen, haben wir die bestehende Raumnutzung und die ökologischen Spannungsfelder vor Ort analysiert. Dabei wurden zwei zentrale Problembereiche deutlich:</p>
+            
+            <p><strong>a. Unterauslastung der Fläche</strong><br>
+            Nur etwa 40 % der vorhandenen Parkplätze werden regelmäßig genutzt – trotz der zentralen Lage am Flussufer.</p>
+            <img src="assets/sinfonie/parkraumnutzung.png" class="section-image" alt="Parkraumnutzung">
+            <span class="figure-caption">Parkraumnutzung</span>
+
+            <p><strong>b. Spuren des Konflikts zwischen Stadt und Natur</strong><br>
+            Abgenutzte Übergänge, beschädigte Zäune und Spuren von Überschwemmungen zeigen die Erosion der Schnittstelle zwischen menschlicher Nutzung und natürlichem Lebensraum.</p>
+            <img src="assets/sinfonie/area-analyze.png" class="section-image" alt="Naturrückzug">
+            <span class="figure-caption">Naturrückzug</span>
+        </div>
+    </section>
+
+    <!-- Section 4: Gestaltungskonzept -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Gestaltungs-<br>konzept<br>&<br>Entwurfsidee</h2>
+        </div>
+        <div class="section-body">
+            <p>Nutzung trifft Struktur. Gestaltung entsteht dort, wo Bedürfnisse präzise gelesen und räumlich umgesetzt werden.</p>
+            
+            <p><strong>Bedarf als Ausgangspunkt</strong><br>
+            Wir haben funktionale Anforderungen und räumliche Strukturen analysiert, um sicherzustellen, dass der gestaltete Raum die vielfältigen Bedürfnisse erfüllt – sozial wie ökologisch.</p>
+            <img src="assets/sinfonie/bedarf.png" class="section-image" alt="Bedarfsanalyse">
+
+            <p><strong>Vom Bedarf zur Struktur – Warum ein kreisförmiges Rastersystem?</strong><br>
+            Um die unterschiedlichen Nutzungsbedürfnisse – sozial, ökologisch, infrastrukturell – gleichwertig im Raum zu organisieren, entwickelten wir ein kreisförmiges Rastersystem. Es bricht mit linearen, anthropozentrischen Stadtlogiken und ermöglicht eine neue Lesbarkeit der Übergänge zwischen Mensch, Raum und Ökologie.</p>
+            <p>Das runde Raster ist nicht hierarchisch, sondern offen, adaptiv und ökologisch inspiriert:</p>
+            <ul>
+                <li><strong>Natürliche Logik statt städtischer Ordnung</strong>: Kreise imitieren die Struktur ökologischer Systeme – vernetzt statt linear.</li>
+                <li><strong>Unbestimmte Ränder = Möglichkeitsräume</strong>: Die Überlagerung der Module erzeugt fließende Übergänge zwischen Biodiversität und Nutzung.</li>
+                <li><strong>Jede Zelle zählt</strong>: Jedes Modul (Ø 10 m) ist ein gleichwertiger Baustein – ob Spielbereich, Grüninsel oder Vogelhabitat.</li>
+            </ul>
+            <img src="assets/sinfonie/gestaltungsraster.png" class="section-image" alt="Gestaltungsraster">
+            <span class="figure-caption">Gestaltungsraster mit menschlichem Bezug. Das Grundraster basiert auf 25 × 25 cm Einheiten. Die Kreismodule (Ø 10 m) orientieren sich an Bewegungs- und Aufenthaltsmaßen.</span>
+        </div>
+    </section>
+
+    <!-- Section 5: Räumliche Strategie -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Räumliche<br>Strategie<br>&<br>System-<br>entwurf</h2>
+        </div>
+        <div class="section-body">
+            <p><strong>Vom Raster zur räumlichen Struktur – Ein flexibles Rastersystem als Grundlage der Raumgestaltung</strong></p>
+            <p>Die aus dem kreisförmigen Rastersystem (Ø 10 m) abgeleitete Logik bildet die Grundlage unserer räumlichen Strategie. Auf dieser Basis wurde das Gelände in drei Hauptzonen gegliedert: <strong>Parkplatz, Park und Platz.</strong></p>
+            <p>Diese Zonen sind nicht strikt getrennt, sondern bewusst <strong>überlagernd und durchlässig</strong> gestaltet – <strong>es entstehen Übergänge statt Barrieren.</strong> Die Dimensionierung des Rasters orientiert sich an realen Nutzergrößen wie Fußgänger*innen, Kinderwägen, Fahrrädern und Fahrzeugen. So schafft das System sowohl <strong>räumliche Orientierung</strong> als auch <strong>funktionale Offenheit</strong>, und lässt sich auf verschiedene Kontexte übertragen.</p>
+
+            <p><strong>Zonierungsdiagramm</strong><br>
+            Das Raster bildet drei Hauptzonen mit fließenden Übergängen: Parkplatz, Aktivitätszone und Ökozone.</p>
+            <img src="assets/sinfonie/zonierungsdiagramm.png" class="section-image" alt="Zonierung">
+            <span class="figure-caption">Übersichtliche Raumgliederung durch ein flexibles, modulares System.</span>
+
+            <p><strong>Nutzungsszenen</strong><br>
+            Die kleinteilige Rasterlogik ermöglicht Durchwegung, Aufenthalt und naturnahes Erleben innerhalb desselben Systems.</p>
+            <img src="assets/sinfonie/nutzungsszenen.jpg" class="section-image" alt="Nutzungsszenen">
+            <span class="figure-caption">Verzahnung von Grünraum und Aktivitätsflächen in situativer Nutzung.</span>
+
+            <p><strong>Programmatische Vielfalt</strong><br>
+            Das Raster kann unterschiedliche soziale und funktionale Nutzungen tragen – von Spiel über Rückzug bis zur Begegnung.</p>
+            <img src="assets/sinfonie/raumsituationen.jpg" class="section-image" alt="Raumsituationen">
+            <span class="figure-caption">Vielschichtige Raumsituationen für verschiedene Nutzergruppen.</span>
+
+            <p><strong>Transformation & Anpassung</strong><br>
+            Der Raum ist nicht als fertiger Zustand gedacht, sondern als offenes System mit Entwicklungspotenzial über die Zeit.</p>
+            <img src="assets/sinfonie/transformation.png" class="section-image" alt="Transformation">
+            <span class="figure-caption">Nutzung, Vegetation und Raumverteilung verändern sich dynamisch mit dem städtischen Kontext.</span>
+        </div>
+    </section>
+
+    <!-- Section 6: Materialität -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Materialität<br>&<br>Prototypische<br>Umsetzung</h2>
+        </div>
+        <div class="section-body">
+            <p><strong>Vom Pflasterstein zur Systemidee</strong><br>
+            Das Pflastermodul ist nicht nur ein technisches Detail, sondern ein strategischer Entwurfsträger. Durch seine Wandelbarkeit wird es zur Schnittstelle zwischen Mikro- und Makrostruktur, zwischen temporärer Nutzung und langfristiger städtischer Transformation.<br>
+            <strong>Funktional + offen + evolutionär = ein Stadtboden der Zukunft.</strong></p>
+
+            <p><strong>Modulare Logik – baubar, lesbar, wandelbar</strong><br>
+            Unsere Pflasterstruktur basiert auf einem modularen Element mit differenzierbarer Füllung. Je nach Funktion und Nutzungskontext kann das Material im Inneren variieren: Splitt für tragfähige Zonen, poröse Substrate für Regenwasserinfiltration oder Humus für Pflanzflächen. So entsteht ein Boden, der nicht abgrenzt, sondern vermittelt – zwischen Bewegung und Wachstum, Mensch und Natur.</p>
+            <img src="assets/sinfonie/3ddruck.png" class="section-image" alt="3D Modell">
+            <span class="figure-caption">3D-gedrucktes Modell mit Materialvarianten. Wechselnde Füllstoffe schaffen fließende Übergänge.</span>
+
+            <p><strong>Struktur als Möglichkeitsraum</strong><br>
+            Die Elemente selbst – geometrisch einfach, aber funktional durchdacht – bestehen aus einer tragfähigen Doppelstruktur. Ihre Form erlaubt unterschiedliche Rasterkombinationen, unterschiedliche Belastbarkeiten, unterschiedliche Sichtweisen auf das, was als „Boden“ gilt.</p>
+            <img src="assets/sinfonie/ecorock.png" class="section-image" alt="EcoRock Material">
+            <span class="figure-caption">EcoRock – Material & Trägerstruktur. Robust, porös, wiederverwendbar.</span>
+        </div>
+    </section>
+
+    <!-- Section 7: Modellbau -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Modellbau<br>&<br>Design-<br>reflexion</h2>
+        </div>
+        <div class="section-body">
+            <p><strong>Vom Konzept zur physischen Erfahrung</strong><br>
+            Unser Entwurf wurde nicht nur digital, sondern auch physisch erprobt. Die Modellbauphase diente als Mittel, die räumlichen Wirkungen, Materialübergänge und Maßstabsebenen greifbar zu machen. Durch den Bau von 1:500 Parkmodellen, 1:10 Pflasterstrukturelementen und 1:1 Prototypen konnten wir überprüfen, wie sich das System verhält – in der Hand, im Raum und im Maßstab.</p>
+            <p>Dabei zeigte sich:<br>
+            <strong>Was als Raster begann, wurde zum Raumkörper.<br>
+            Was als Struktur gedacht war, wurde zum Medium der Erfahrung.</strong></p>
+
+            <div class="image-stack">
+                <img src="assets/sinfonie/modellbau.jpg" alt="Modellbau">
+                <img src="assets/sinfonie/ausstellung1.jpg" alt="Ausstellung 1">
+                <img src="assets/sinfonie/ausstellung2.jpg" alt="Ausstellung 2">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: End Hero -->
+    <div class="end-hero-section">
+        <div class="end-hero-text">
+            <strong>SINFONIE ist kein abgeschlossenes Stück, sondern eine offene Partitur.</strong><br>
+            Der Raum ist nicht festgelegt – er wird gespielt, bespielt, weitergedacht. <br> Eine Stadt, die atmet. Ein System, das zuhört.
+        </div>
+        <img class="end-hero-image" src="assets/home/sinfonie-hero-image.jpg" alt="Sinfonie Vision">
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div>Based in Germany</div>
+        <div>© 2026 Qianyi Cheng</div>
+    </div>
+
+</body>
+</html>

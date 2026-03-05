@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Journals | Qianyi's Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+    /* Journal specific styles */
+    .journals-container {
+        padding: 120px 40px;
+        max-width: 1000px;
+        margin: 0 auto;
+        min-height: calc(100vh - 160px); /* Fill screen minus header/footer approx */
+    }
+
+    .journals-title {
+        font-size: 3rem;
+        font-weight: 800;
+        margin-bottom: 60px;
+        letter-spacing: -1px;
+    }
+
+    .journal-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .journal-item {
+        display: flex;
+        align-items: baseline;
+        text-decoration: none;
+        color: var(--text-color);
+        padding: 20px 0;
+        border-bottom: 1px solid rgba(0,0,0,0.1);
+        transition: all 0.3s ease;
+    }
+
+    .journal-item:hover {
+        padding-left: 10px;
+        border-bottom-color: var(--accent-color);
+    }
+
+    .journal-date {
+        flex: 0 0 150px;
+        font-size: 0.9rem;
+        font-weight: 400;
+        color: #888;
+        font-family: monospace; /* Monospace or light font for date */
+    }
+
+    .journal-title {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 0;
+        transition: color 0.3s ease;
+    }
+
+    .journal-item:hover .journal-title {
+        color: var(--accent-color);
+    }
+
+    @media (max-width: 768px) {
+        .journal-item {
+            flex-direction: column;
+            gap: 10px;
+        }
+        .journal-date {
+            flex: auto;
+        }
+        .journal-title {
+            font-size: 1.4rem;
+        }
+        .journals-container {
+            padding: 80px 20px;
+        }
+    }
+</style>
+</head>
+<body class="is-project">
+
+    <!-- Navigation -->
+    <nav class="project-nav">
+        <a href="index.html" class="project-logo">Qianyi.</a>
+    </nav>
+
+    <!-- Journals List -->
+    <div class="journals-container">
+        <h1 class="journals-title">Journals</h1>
+        
+        <div class="journal-list">
+            <!-- Article Link -->
+            <a href="journal-catsitting.html" class="journal-item">
+                <div class="journal-date">Oct 01, 2025</div>
+                <h2 class="journal-title">Vom Catsitting zum User Experience Design</h2>
+            </a>
+            
+            <!-- Future articles will be added here -->
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div>Based in Germany</div>
+        <div>© 2026 Qianyi Cheng</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AR Cycling | Qianyi's Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+    /* Reuse styles from Study Buddy */
+    
+    /* 2. Hero Section */
+    .project-hero {
+        width: 100%;
+        height: 100vh;
+        background-image: url('assets/home/arcycling-hero-image.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10%;
+        box-sizing: border-box;
+        color: white;
+        position: relative;
+    }
+
+    .hero-overlay {
+        position: absolute;
+        top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        z-index: 1;
+    }
+
+    .hero-content { position: relative; z-index: 2; max-width: 800px; }
+
+    .hero-title {
+        font-size: clamp(3rem, 8vw, 6rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        font-weight: 700;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+
+    .hero-intro {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    .hero-tags {
+        font-size: 0.9rem;
+        font-weight: 600;
+        opacity: 0.8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .hero-tags div { margin-bottom: 8px; }
+
+    /* 3. Content Sections */
+    .content-section {
+        padding: 120px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 35% 1fr;
+        gap: 80px;
+    }
+
+    .section-header { position: sticky; top: 100px; height: fit-content; }
+
+    .section-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1A1A1A;
+        margin: 0;
+        line-height: 1.2;
+        text-transform: uppercase;
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    .section-body {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    .section-body p { margin-bottom: 20px; }
+    .section-body ul { padding-left: 20px; margin-bottom: 20px; }
+    .section-body li { margin-bottom: 10px; }
+
+    /* Video Container (Local) */
+    .video-container {
+        width: 100%;
+        max-width: 1400px; /* Optional constraints */
+        margin: 0 auto;
+        padding: 0 40px; /* Add side padding */
+        box-sizing: border-box;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 4px; /* Optional subtle radius */
+    }
+
+    /* Images */
+    .section-image {
+        width: 100%;
+        height: auto;
+        display: block;
+        margin: 40px 0;
+        border-radius: 4px;
+        /* No shadow for diagrams as requested previously, or maybe yes for photos? */
+        /* Assuming diagrams/pngs might be transparent, keeping it flat */
+    }
+
+    /* Vertical Stack Grid for Erlebnis */
+    .image-grid-2 {
+        display: grid;
+        grid-template-columns: 1fr; /* 改为单列，垂直堆叠 */
+        gap: 40px; /* 增加间距 */
+        margin-top: 40px;
+    }
+    .image-grid-2 img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.1); /* Photos get shadow */
+    }
+
+    /* Section 9: End Hero (Full Screen Cover) */
+    .end-hero {
+        width: 100%;
+        height: 100vh; /* 强制全屏高度 */
+        margin-top: 0;
+        display: block;
+        overflow: hidden; /* 防止溢出 */
+    }
+    .end-hero img {
+        width: 100%;
+        height: 100%; /* 填满容器 */
+        object-fit: cover; /* 裁剪适应，保持比例 */
+        object-position: center; /* 居中显示核心内容 */
+        display: block;
+    }
+
+    /* Mobile */
+    @media (max-width: 768px) {
+        .content-section {
+            grid-template-columns: 1fr;
+            padding: 60px 20px;
+            gap: 20px;
+        }
+        .section-header { position: static; margin-bottom: 20px; }
+        .section-title { font-size: 2rem; }
+        .image-grid-2 { grid-template-columns: 1fr; }
+        .project-hero { padding: 0 20px; }
+        .project-nav { padding: 0 20px; }
+    }
+
+</style>
+</head>
+<body class="is-project">
+
+    <!-- Navigation -->
+    <nav class="project-nav">
+        <a href="index.html" class="project-logo">Qianyi.</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="project-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">AR Cycling</h1>
+            <div class="hero-subtitle">Radfahren neu gedacht – mit Augmented Reality.</div>
+            <div class="hero-intro">Ein interaktives Fahrradkonzept für ein immersives, intelligentes Fahrerlebnis.</div>
+            <div class="hero-tags">
+                <div>#Interaction Design</div>
+                <div>#AR/VR</div>
+                <div>#Mobility</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1: Overview -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Projekt-<br>überblick</h2>
+        </div>
+        <div class="section-body">
+            <p>Dieses konzeptionelle Einzelprojekt wurde im Rahmen meines Interaction Design Studiums entwickelt.<br>
+            Ziel war es, durch die Kombination von AR-Brille und Fahrradsteuerung eine neue Art des Radfahrens zu gestalten: eine, die nicht nur funktional ist, sondern auch spielerisch, immersiv und emotional bereichernd.</p>
+            
+            <p><strong>Wie kann Augmented Reality das Fahrraderlebnis optimieren – ohne die Sicherheit zu gefährden, und gleichzeitig neue Interaktionsformen schaffen?</strong></p>
+
+        </div>
+    </section>
+
+    <div class="video-container">
+        <video controls autoplay muted loop playsinline poster="assets/home/arcycling-hero-image.jpg">
+            <source src="assets/ar-cycling/arcycling.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Section 2: Problem -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Problemstellung<br>&<br>Design Challenge</h2>
+        </div>
+        <div class="section-body">
+            <p>Aktuelle Fahrradanwendungen setzen fast ausschließlich auf Smartphones – oder, im Fall von AR/VR, auf stationäre Trainingsgeräte in Innenräumen. Im echten Straßenraum fehlt es an Lösungen, die digitale Informationen körpernah, sicher und fahrflusskompatibel einbinden.</p>
+            <p>Die Konsequenz: Wer unterwegs digitale Informationen abruft, wechselt ständig zwischen physischer Bewegung und digitalem Interface. Das Fahren wird unterbrochen, die Aufmerksamkeit fragmentiert, das Sicherheitsrisiko steigt.</p>
+            <p>Daraus ergaben sich zwei zentrale Designfragen:</p>
+            <ol>
+                <li><strong>Welche Informationen</strong> sind während des Radfahrens tatsächlich relevant, und welche erzeugen nur kognitive Belastung?</li>
+                <li><strong>In welcher Form</strong> können digitale Inhalte so in die reale Umgebung integriert werden, dass sie den Fahrfluss nicht unterbrechen, sondern bereichern – funktional wie emotional?</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Section 3: Concept -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Konzept:<br>Informations-<br>architektur &<br>Interaktions-<br>system</h2>
+        </div>
+        <div class="section-body">
+            <p>Um diese Fragen zu beantworten, wurde ein konzeptuelles Informationssystem entwickelt, das vier zentrale Kategorien umfasst:</p>
+            <img src="assets/ar-cycling/info-structure.png" class="section-image" alt="Information Structure">
+            
+            <p>Die vier Kategorien bilden ein Spektrum von funktionaler Sicherheit bis emotionaler Bereicherung: Navigation und Umgebungsdaten dienen primär der sicheren Orientierung im Straßenraum, Fahrtdaten ermöglichen Selbstreflexion über die eigene Leistung, und Gamification-Elemente schaffen eine zusätzliche Motivationsebene jenseits des reinen Fortkommens.</p>
+            <p>Diese Unterscheidung ist nicht nur inhaltlich, sondern auch strukturell relevant, denn sie bildet die Grundlage für zwei Erlebnis-Modi, zwischen denen Nutzer auch während der Fahrt wechseln können:</p>
+            <ul>
+                <li><strong>Training Mode</strong> aktiviert Navigation, Umgebungswarnungen und Fahrtdaten, ausschließlich funktionale, leistungsorientierte Informationen.</li>
+                <li><strong>Relaxing Mode</strong> ergänzt diese Basis um Gamification-Elemente, Attraktionen und spielerische Inhalte. Der Fokus verschiebt sich von Leistung zu Erkundung.</li>
+            </ul>
+            <img src="assets/ar-cycling/flussdiagramm.png" class="section-image" alt="Flow Diagram">
+
+            <p>Das Interaktionskonzept orientiert sich an den drei Phasen der Fahrradtour: vor, während und nach der Fahrt:</p>
+            <ul>
+                <li><strong>Vor und nach der Fahrt</strong> stehen vielfältige Eingabemethoden zur Verfügung: Gesten-, Sprach- und Touchsteuerung, Blickerkennung sowie Interaktion über das Fahrrad.</li>
+                <li><strong>Während der Fahrt</strong> wird die Steuerung aus Sicherheitsgründen auf Sprache, Blick und die Fahrradbremse als haptischen Trigger reduziert.</li>
+            </ul>
+            <p>Diese Einschränkung ist eine bewusste Designentscheidung: In früheren Iterationen wurde auch Gestensteuerung während der Fahrt in Betracht gezogen, jedoch wegen möglicher Fehltrigger und mangelnder Präzision verworfen. Interaktion muss nicht jederzeit maximal möglich sein, sondern muss situativ sinnvoll und sicher sein.</p>
+        </div>
+    </section>
+
+    <!-- Section 4: Experience -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Erlebnis:<br>Demo &<br>Belohnungs-<br>kreislauf</h2>
+        </div>
+        <div class="section-body">
+            <p>Das Konzeptvideo wurde auf dem Frankfurter Radschnellweg aufgenommen: einer speziell ausgebauten Route, die eine sichere und kontinuierliche Fahrsituation bietet. Es zeigt, wie Informationen im Raum platziert, Modi gewechselt und der Nutzer im Fahrfluss gehalten werden kann.</p>
+            <p>Doch das Erlebnis endet nicht mit der Fahrt. Am Ende erhalten Nutzer eine personalisierte Zusammenfassung ihrer Tour. Virtuell gesammelte Objekte können genutzt werden, um neue Fahrszenarien freizuschalten oder gegen reale Goodies eingetauscht zu werden. So entsteht ein Motivationskreislauf, der reale Bewegung mit virtuellen Erlebnissen verbindet; und Radfahren in ein emotional aufgeladenes, spielerisches Erlebnis verwandelt.</p>
+            <p>Die Verbindung von Raum, Rhythmus und Reaktion ist der Kern dieses Konzepts: Radfahren wird nicht unterbrochen, sondern erweitert.</p>
+            
+            <div class="image-grid-2">
+                <img src="assets/ar-cycling/arcycling_result.jpg" alt="AR Cycling Result">
+                <img src="assets/ar-cycling/arcycling_shop.jpg" alt="AR Cycling Shop">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 5: Reflection -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Projekt-<br>reflexion</h2>
+        </div>
+        <div class="section-body">
+            <p>Dieses Projekt war ein konzeptioneller Versuch, digitale Interaktion im Kontext körperlicher Bewegung neu zu denken. Dabei stand weniger die technische Machbarkeit im Vordergrund, sondern die Frage, <strong>was Interaktion im Kern ist, wenn sie nicht auf Oberflächen, sondern auf Handlung, Raum und Wahrnehmung basiert.</strong></p>
+            <p>Die Steuerung wurde bewusst phasenbasiert entwickelt: nicht aus Formalismus, sondern als Antwort auf unterschiedliche kognitive Zustände. Interaktion muss nicht jederzeit möglich sein – sie muss situativ sinnvoll sein.</p>
+            <p>Ich sehe Augmented Reality nicht als zusätzliches Interface, sondern als potenzielles Werkzeug zur Verstärkung realer Präsenz. Wenn digitale Systeme den Bezug zur Umwelt nicht stören, sondern schärfen. Dann entsteht daraus nicht nur Information, sondern Bedeutung.</p>
+            <p>Das Konzept ist nicht abgeschlossen. Aber es zeigt eine Haltung: Interaktion beginnt nicht im Interface, sondern im Körper; und endet nicht im Screen, sondern in der Welt.</p>
+        </div>
+    </section>
+
+    <!-- Section 6: End Hero -->
+    <div class="end-hero">
+        <img src="assets/ar-cycling/arheadset.png" alt="AR Cycling Context">
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div>Based in Germany</div>
+        <div>© 2026 Qianyi Cheng</div>
+    </div>
+
+</body>
+</html>

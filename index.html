@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Qianyi's Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body class="is-home">
+
+    <div class="bg-overlay" id="bgLayer"></div>
+
+    <div class="logo">Qianyi.</div>
+
+    <div class="nav-container">
+        
+        <div class="nav-group">
+            <a class="main-item" data-index="01" href="#">Projects</a>
+            <div class="sub-menu-container">
+                <a class="sub-item" 
+                   href="study-buddy.html"
+                   data-color="#E63946" 
+                   data-image="assets/home/studybuddy-hero-image.jpg"
+                   data-dark="true"
+                   data-title="Das Schulbuch von morgen – schon heute nutzbar."
+                   data-desc="Mehr als ein E‑Book: ein KI‑gestütztes, inklusives, immersives und interaktives Lernsystem.">
+                   STUDY BUDDY
+                </a>
+                
+                <a class="sub-item" 
+                   href="ar-cycling.html"
+                   data-color="#457B9D" 
+                   data-image="assets/home/arcycling-hero-image.jpg"
+                   data-dark="true"
+                   data-title="Radfahren neu gedacht – mit Augmented Reality."
+                   data-desc="Ein interaktives Fahrradkonzept für ein immersives, intelligentes Fahrerlebnis.">
+                   AR CYCLING
+                </a>
+
+                <a class="sub-item" 
+                   href="sinfonie.html"
+                   data-color="#A8DADC" 
+                   data-image="assets/home/sinfonie-hero-image.jpg"
+                   data-dark="true"
+                   data-title="Ökologie trifft Öffentlichkeit."
+                   data-desc="Ein transformierbares Entwurfssystem für das Mainufer Offenbach – modular, ökologisch, menschlich.">
+                   SINFONIE
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-group">
+            <a class="main-item" data-index="02" href="journals.html"
+               data-color="#1A1A1A" 
+               data-dark="true"
+               data-title=""
+               data-desc="Personal reflections on design systems, human interactions, and the mechanics of everyday life.">
+               Journals
+            </a>
+        </div>
+
+        <div class="nav-group">
+            <a class="main-item" data-index="03" href="about.html">About Me</a>
+        </div>
+    </div>
+
+    <div class="project-info" id="projectInfo">
+        <div class="info-title" id="infoTitle"></div>
+        <div class="info-desc" id="infoDesc"></div>
+    </div>
+
+    <div class="footer">
+        <div>Based in Germany</div>
+        <div>© 2026 Qianyi Cheng</div>
+    </div>
+
+    <script>
+        const subItems = document.querySelectorAll('.sub-item');
+        const body = document.body;
+        const bgLayer = document.getElementById('bgLayer');
+        const projectInfo = document.getElementById('projectInfo');
+        const infoTitle = document.getElementById('infoTitle');
+        const infoDesc = document.getElementById('infoDesc');
+
+        // 将主菜单项（如果带有data-title）也加入悬停效果
+        const hoverItems = document.querySelectorAll('.sub-item, .main-item[data-title]');
+
+        hoverItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                // 1. 获取图片和颜色，设置背景
+                const color = item.getAttribute('data-color');
+                const image = item.getAttribute('data-image');
+                
+                bgLayer.style.backgroundColor = color; // 颜色作为底色，防止图片加载慢
+                
+                if (image) {
+                    bgLayer.style.backgroundImage = `url('${image}')`;
+                } else {
+                    bgLayer.style.backgroundImage = 'none';
+                }
+                
+                bgLayer.style.opacity = '1';
+
+                // 2. 检查是否需要深色模式 (文字变白)
+                const isDark = item.getAttribute('data-dark') === 'true';
+                if (isDark) {
+                    body.classList.add('dark-mode');
+                } else {
+                    body.classList.remove('dark-mode');
+                }
+
+                // 3. 更新并显示右下角信息
+                infoTitle.textContent = item.getAttribute('data-title');
+                infoDesc.textContent = item.getAttribute('data-desc');
+                projectInfo.classList.add('visible');
+            });
+
+            item.addEventListener('mouseleave', () => {
+                // 鼠标离开项目时，恢复默认状态
+                bgLayer.style.opacity = '0';
+                body.classList.remove('dark-mode');
+                projectInfo.classList.remove('visible');
+            });
+        });
+
+        // 当鼠标完全离开整个导航区域时，恢复默认
+        document.querySelector('.nav-container').addEventListener('mouseleave', () => {
+            bgLayer.style.opacity = '0';
+            body.classList.remove('dark-mode');
+            projectInfo.classList.remove('visible');
+        });
+    </script>
+
+</body>
+</html>

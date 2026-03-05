@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vom Catsitting zum User Experience Design | Qianyi's Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+    /* Journal Article specific styles */
+    .article-container {
+        padding: 120px 20px 80px;
+        max-width: 700px; /* Narrow column for optimal reading */
+        margin: 0 auto;
+        min-height: calc(100vh - 160px);
+    }
+
+    .article-header {
+        margin-bottom: 60px;
+    }
+
+    .article-date {
+        font-size: 0.9rem;
+        color: #888;
+        font-family: monospace;
+        margin-bottom: 15px;
+        display: block;
+    }
+
+    .article-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+        font-weight: 800;
+        line-height: 1.1;
+        margin: 0;
+        letter-spacing: -1px;
+        color: #1a1a1a;
+    }
+
+    .article-content {
+        font-size: 1.1rem;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    .article-content p {
+        margin-bottom: 24px;
+    }
+
+    .article-content h2 {
+        font-size: 1.8rem;
+        font-weight: 700;
+        margin: 40px 0 20px;
+        color: #1a1a1a;
+    }
+
+    .article-content h3 {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin: 30px 0 15px;
+        color: #1a1a1a;
+    }
+
+    .article-content ul, .article-content ol {
+        padding-left: 20px;
+        margin-bottom: 24px;
+    }
+
+    .article-content li {
+        margin-bottom: 10px;
+    }
+
+    .article-content img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        margin: 30px 0;
+    }
+
+    .article-content blockquote {
+        border-left: 4px solid var(--accent-color);
+        margin: 0 0 24px 0;
+        padding: 10px 20px;
+        font-style: italic;
+        color: #555;
+        background: rgba(0,0,0,0.03);
+    }
+
+    /* Back Button */
+    .back-link {
+        display: inline-block;
+        margin-top: 60px;
+        font-size: 1rem;
+        font-weight: 600;
+        color: #888;
+        text-decoration: none;
+        transition: color 0.3s ease, transform 0.3s ease;
+    }
+
+    .back-link:hover {
+        color: var(--accent-color);
+        transform: translateX(-5px);
+    }
+
+    @media (max-width: 768px) {
+        .article-container {
+            padding-top: 80px;
+        }
+    }
+</style>
+</head>
+<body class="is-project">
+
+    <!-- Navigation -->
+    <nav class="project-nav">
+        <a href="index.html" class="project-logo">Qianyi.</a>
+    </nav>
+
+    <!-- Article Content -->
+    <article class="article-container">
+        <header class="article-header">
+            <time class="article-date">Oct 01, 2025</time>
+            <h1 class="article-title">Vom Catsitting zum User Experience Design</h1>
+        </header>
+
+        <div class="article-content">
+            <p>Auf dem Heimweg von einem Kunden wurde mir plötzlich etwas klar: Ich hatte in den letzten Wochen beim Catsitting eigentlich ununterbrochen Service Design betrieben.</p>
+
+            <p>Ich nehme über <em>Cat in a Flat</em> Aufträge an und betreue die Katzen meiner Kunden vor Ort. Von der ersten Buchung an hatte ich mir einen festen Ablauf angewöhnt: Ankommen, den Zustand der Katze checken, füttern, saubermachen, spielen, lüften und den Besitzern zum Schluss täglich Fotos und Videos schicken. Für das Ganze hatte ich eine Checkliste im Kopf. Jeden erledigten Schritt habe ich abgehakt und am Ende als Screenshot rübergeschickt. Damals entstand das aus einem reinen Instinkt heraus, einfach um nichts zu vergessen. Ich hatte mir nicht viel dabei gedacht, es fühlte sich einfach sicherer an.</p>
+            
+            <p>Aber auf dem Rückweg dachte ich mir plötzlich: Ist das nicht im Grunde ein Transparenzmechanismus?</p>
+            
+            <p>Den eigenen Schlüssel abzugeben und wegzufahren, erfordert extrem viel Vertrauen. Die eigentliche Sorge der Katzenbesitzer ist nicht nur, ob die Katze gefressen hat, sondern vielmehr das beklemmende Gefühl der Ungewissheit: „Ich bin nicht da, ich weiß nicht, was passiert, und ich habe keine Kontrolle.“ Der Screenshot der Checkliste und die täglichen Fotos befriedigen also nicht nur ein Informationsbedürfnis, sondern vor allem ein emotionales. Das ist Jakob Nielsens „visibility of system status“ in der realen Welt: Man zeigt dem Nutzer, dass das System läuft. Nicht, weil er einem misstraut, sondern weil Ungewissheit an sich schon wahnsinnig zehrend ist.</p>
+            
+            <p>Dann fiel mir noch etwas anderes ein. Bevor man den ersten Auftrag annimmt, sieht <em>Cat in a Flat</em> ein Kennenlernen zwischen Kunde und Catsitter vor. Man trifft sich, der Kunde macht sich ein Bild von einem, man lernt die Katze und die Wohnung kennen, und dann entscheidet man, ob es passt, bevor der Schlüssel übergeben wird. In der Logik der Plattform ist das wohl einfach eine Sicherheitsmaßnahme. Aus der Designperspektive ist es reines Onboarding. Bevor der Nutzer die Kontrolle wirklich abgibt, muss erst eine menschliche Vertrauensbasis geschaffen werden. Diese Voraussetzung ist essenziell.</p>
+            
+            <p>Was ich da eigentlich mache, ist oberflächlich betrachtet das Reinigen von Katzenklos und das Auffüllen von Futternäpfen. Im Kern geht es jedoch darum, Ängste zu managen. Und zwar nicht die der Katze, sondern die der Besitzer.</p>
+            
+            <p>Das führt mich zu einer größeren Frage: Wie oft gehen wir beim Produktdesign wirklich auf die Emotionen der Nutzer ein, anstatt nur ihre funktionalen Anforderungen abzuhaken? Letztere lassen sich leicht quantifizieren, verifizieren und in ein PRD schreiben. Aber dieses Gefühl von „Ich bin nicht vor Ort, also bin ich beunruhigt“ ist das, was das Nutzerverhalten letztlich antreibt. Katzenbesitzer zahlen nicht nur für ein Paar helfende Hände, sie zahlen für ein Gefühl der Sicherheit. Im Service Design gibt es dafür den Begriff „Trust Scaffolding“ (Vertrauensgerüst). Das sind die strukturellen Elemente, die in der Anfangsphase einer Beziehung das Vertrauen stützen, wie etwa transparente Abläufe, zeitnahes Feedback und das Einhalten von Zusagen. Sobald das Vertrauen an sich gefestigt ist, kann dieses Gerüst nach und nach abgebaut werden. Genau das habe ich mit meiner Checkliste und den Fotos erreicht.</p>
+            
+            <p>„Design ist überall.“ Das sagt sich leicht, aber um es wirklich zu „sehen“, braucht man eine gewisse Routine: Man muss Alltagserfahrungen wie Prototypen zerlegen, die dahinterliegende Logik entschlüsseln und sich dann fragen, wo sich diese Logik noch anwenden lässt. Man findet nicht jedes Mal eine Antwort, aber allein diese Frage im Hinterkopf zu behalten, ist an sich schon ein wunderbares Training für das Design Thinking.</p>
+        </div>
+
+        <a href="journals.html" class="back-link">← Back to Journals</a>
+    </article>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div>Based in Germany</div>
+        <div>© 2026 Qianyi Cheng</div>
+    </div>
+
+</body>
+</html>

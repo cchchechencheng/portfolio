@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Study Buddy | Qianyi's Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<style>
+    /* Study Buddy Specific Styles */
+    
+    /* 2. Hero Section */
+    .project-hero {
+        width: 100%;
+        height: 100vh;
+        background-image: url('assets/study-buddy/sb-hero-image.jpg');
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 0 10%; /* Increase padding for focus */
+        box-sizing: border-box;
+        color: white; /* Assume dark image, text white. Or prompt said #F2F2F2 bg? No, full screen image. */
+        position: relative;
+    }
+
+    /* Overlay for text readability on hero image */
+    .hero-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.4); /* Dark overlay */
+        z-index: 1;
+    }
+
+    .hero-content {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+    }
+
+    .hero-title {
+        font-size: clamp(3rem, 8vw, 6rem); /* Responsive huge font */
+        font-weight: 800;
+        line-height: 1.1;
+        margin-bottom: 20px;
+        letter-spacing: -2px;
+    }
+
+    .hero-subtitle {
+        font-size: clamp(1.2rem, 3vw, 2rem);
+        font-weight: 700;
+        margin-bottom: 15px;
+        line-height: 1.3;
+    }
+
+    .hero-intro {
+        font-size: 1.2rem;
+        font-weight: 400;
+        margin-bottom: 30px;
+        line-height: 1.6;
+        opacity: 0.9;
+    }
+
+    .hero-tags {
+        font-size: 0.9rem;
+        font-weight: 600;
+        opacity: 0.8;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+    
+    .hero-tags div {
+        margin-bottom: 8px; /* 增加竖向间距 */
+    }
+
+    /* 3. Content Sections (Grid Layout) */
+    .content-section {
+        padding: 120px 40px;
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 35% 1fr; /* 调整为 35% 左侧，给标题更多空间 */
+        gap: 80px; /* 增加间距，彻底防止重叠 */
+    }
+
+    .section-header {
+        position: sticky;
+        top: 100px; /* Stick below nav */
+        height: fit-content;
+    }
+
+    .section-title {
+        font-size: 3rem;
+        font-weight: 700;
+        color: #1A1A1A;
+        margin: 0;
+        line-height: 1.2;
+        text-transform: uppercase; /* 强制大写 */
+        word-break: break-word; /* 防止长单词溢出 */
+        hyphens: auto; /* 允许自动连字符 */
+    }
+
+    .section-body {
+        font-size: 1rem;
+        line-height: 1.8;
+        color: #333;
+    }
+
+    .section-body p {
+        margin-bottom: 20px;
+    }
+    
+    .section-body ul, .section-body ol {
+        padding-left: 20px;
+        margin-bottom: 20px;
+    }
+
+    .section-body li {
+        margin-bottom: 10px;
+    }
+
+    .placeholder-image {
+        width: 100%;
+        height: 400px;
+        background-color: #ddd;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #888;
+        font-weight: 600;
+        margin-top: 20px;
+    }
+
+    /* 4. Full Width Video */
+    .video-container {
+        width: 100%;
+        max-width: 1400px; /* Optional constraints */
+        margin: 0 auto;
+        padding: 0 40px; /* Add side padding */
+        box-sizing: border-box;
+    }
+
+    video {
+        width: 100%;
+        height: auto;
+        display: block;
+        border-radius: 4px; /* Optional subtle radius */
+    }
+
+    /* Goal Section Grid */
+    .goal-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+        margin-top: 20px;
+    }
+
+    .goal-item {
+        text-align: left;
+    }
+
+    .goal-item img {
+        width: 100%;
+        height: auto;
+        margin-bottom: 15px;
+        border-radius: 4px;
+    }
+
+    .goal-item h3 {
+        font-size: 1.1rem;
+        font-weight: 700;
+        margin: 0 0 10px 0;
+        text-transform: uppercase;
+        color: #1a1a1a;
+    }
+
+    .goal-item p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+        color: #555;
+        margin: 0;
+    }
+
+    /* Diagram Stack for Concept Section */
+    .diagram-stack img {
+        width: 100%;
+        height: auto;
+        margin-top: 40px;
+        display: block;
+        /* 移除阴影和圆角，适应透明PNG */
+    }
+
+    /* Section 6: Components Fan (Card Deck Style) */
+    .components-fan {
+        position: relative;
+        height: 500px; /* 给扇形留出足够的垂直空间 */
+        margin-top: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end; /* 底部对齐 */
+        perspective: 1000px; /* 增加一点透视感 */
+    }
+
+    .comp-card {
+        position: absolute;
+        width: 240px; /* 卡片宽度 */
+        height: auto;
+        transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* 丝滑过渡 */
+        transform-origin: bottom center; /* 扇形旋转中心 */
+        cursor: pointer;
+    }
+
+    /* 1. Label (最前方，不动) */
+    .comp-card.label {
+        z-index: 10;
+        bottom: 0;
+        transform: translateY(60px); /* 下沉更多，减少遮挡 */
+    }
+
+    /* 2. Cards (扇形排列) */
+    .comp-card.c2 { z-index: 1; transform: rotate(-20deg) translate(-100px, 20px); }
+    .comp-card.c3 { z-index: 2; transform: rotate(-10deg) translate(-40px, 0px); }
+    .comp-card.c4 { z-index: 2; transform: rotate(10deg) translate(40px, 0px); }
+    .comp-card.c5 { z-index: 1; transform: rotate(20deg) translate(100px, 20px); }
+
+    /* Hover Interaction */
+    .comp-card:not(.label):hover {
+        z-index: 100; /* 置顶 */
+        transform: translateY(-80px) scale(1.5) rotate(0deg); /* 上浮 + 放大 + 回正 */
+    }
+
+    /* Section 7: Key Screens */
+    .keyscreen-group {
+        margin-bottom: 80px;
+    }
+    .keyscreen-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+        color: #1a1a1a;
+    }
+    .keyscreen-images {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .keyscreen-images img {
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    }
+
+    /* Section 9: End Hero */
+    .end-hero {
+        width: 100%;
+        margin-top: 0;
+        display: block;
+    }
+    .end-hero img {
+        width: 100%;
+        height: auto;
+        display: block;
+    }
+
+    /* Mobile Responsiveness */
+    @media (max-width: 768px) {
+        .content-section {
+            grid-template-columns: 1fr; /* Stack vertically */
+            padding: 60px 20px;
+            gap: 20px;
+        }
+
+        .goal-grid {
+            grid-template-columns: 1fr; /* Stack vertically on mobile */
+            gap: 40px;
+        }
+
+        .keyscreen-images {
+            grid-template-columns: 1fr;
+        }
+
+        .section-header {
+            position: static; /* Remove sticky on mobile */
+            margin-bottom: 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+        }
+
+        .project-hero {
+            padding: 0 20px;
+        }
+
+        .project-nav {
+            padding: 0 20px;
+        }
+    }
+
+</style>
+</head>
+<body class="is-project">
+
+    <!-- Navigation -->
+    <nav class="project-nav">
+        <a href="index.html" class="project-logo">Qianyi.</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="project-hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Study Buddy</h1>
+            <div class="hero-subtitle">Das Schulbuch von morgen – schon heute nutzbar.</div>
+            <div class="hero-intro">Mehr als ein E‑Book: ein KI‑gestütztes, inklusives, immersives und interaktives Lernsystem.</div>
+            <div class="hero-tags">
+                <div>#UX Design</div>
+                <div>#UI Design</div>
+                <div>#Interaction Design</div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1: Overview -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Projekt-<br>überblick</h2>
+        </div>
+        <div class="section-body">
+            <p>Study Buddy ist ein KI-gestütztes, digitales Lehrbuch, das klassische Schulbücher in flexible, personalisierte Lernwege verwandelt. Es geht über reine Digitalisierung hinaus und bricht die Linearität traditioneller Lehrwerke auf. Wissen wird vernetzt, aktualisierbar und interaktiv erfahrbar.</p>
+            <p>Mit interaktivem KI-Chat, adaptiver Fragebank und persönlichem Wissensmanagement unterstützt Study Buddy Schüler:innen beim effizienten, eigenständigen und motivierenden Lernen.</p>
+        </div>
+    </section>
+
+    <!-- Video Demo -->
+    <div class="video-container">
+        <video controls autoplay muted loop playsinline poster="assets/study-buddy/sb-hero-image.jpg">
+            <source src="assets/study-buddy/sb_video.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+    </div>
+
+    <!-- Section 2: Problem -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Zielgruppe<br>&<br>Problem</h2>
+        </div>
+        <div class="section-body">
+            <p>Study Buddy richtet sich an Schüler:innen der Mittel- bis Oberstufe, die zunehmend eigenständig lernen, aber oft nicht über die nötigen Werkzeuge verfügen, um Inhalte sinnvoll zu verknüpfen oder systematisch zu wiederholen. Typische Herausforderungen im Lernalltag:</p>
+            
+            <p><strong>1. Lineare Darstellung</strong><br>
+            Wissen wird in Schulbüchern meist isoliert nach Fächern, Kapiteln und Stufen vermittelt – reale Zusammenhänge bleiben verborgen.</p>
+            
+            <p><strong>2. Unstrukturierte Materialien</strong><br>
+            Eigene Notizen, Übungen oder Mitschriften sind oft analog, verstreut und schwer wiederauffindbar.</p>
+            
+            <p><strong>3. Keine Übersicht, kein Feedback</strong><br>
+            Übungsfortschritte sind nicht nachvollziehbar, Fehler wiederholen sich, der Überblick über das Gelernte fehlt.</p>
+        </div>
+    </section>
+
+    <!-- Section 3: Goal -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Zielsetzung</h2>
+        </div>
+        <div class="section-body">
+            <div class="goal-grid">
+                <!-- Item 1 -->
+                <div class="goal-item">
+                    <img src="assets/study-buddy/lernen-personalisieren.png" alt="Lernen personalisieren">
+                    <h3>Lernen personalisieren</h3>
+                    <p>Inhalte passen sich dem individuellen Lernstand und Tempo an.</p>
+                </div>
+                <!-- Item 2 -->
+                <div class="goal-item">
+                    <img src="assets/study-buddy/wissen-vernetzen.png" alt="Wissen vernetzen">
+                    <h3>Wissen vernetzen</h3>
+                    <p>Fachübergreifende Zusammenhänge werden sichtbar gemacht.</p>
+                </div>
+                <!-- Item 3 -->
+                <div class="goal-item">
+                    <img src="assets/study-buddy/digitale-nutzen.png" alt="Digitale Stärken nutzen">
+                    <h3>Digitale Stärken nutzen</h3>
+                    <p>KI ersetzt starre Seiten durch interaktive Lernprozesse.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: Research -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Recherche</h2>
+        </div>
+        <div class="section-body">
+            <p><strong>1. Analoge Schulbücher sind starr</strong><br>
+            Inhalte sind linear, fächergebunden und veraltet – eine echte Vernetzung fehlt.</p>
+            
+            <p><strong>2. Digitale Lehrmittel bleiben oberflächlich</strong><br>
+            „Digitalisierung“ bedeutet oft nur PDF statt Print – ohne strukturelle oder didaktische Veränderung.</p>
+            
+            <p><strong>3. Lehrkräfte bestätigen diese Grenzen</strong><br>
+            Im Gespräch mit einer Lehrperson wurde deutlich: aktuelle Tools bieten wenig echte Unterstützung beim individuellen Lernen.</p>
+        </div>
+    </section>
+
+    <!-- Section 5: Concept & System -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Konzept<br>&<br>Systemaufbau</h2>
+        </div>
+        <div class="section-body">
+            <!-- Systemaufbau Image First -->
+            <img src="assets/study-buddy/systemaufbau.png" alt="Systemaufbau" style="width: 100%; margin-bottom: 40px;">
+
+            <p>Study Buddy reagiert flexibel auf individuelle Lernbedarfe und verknüpft drei Kernfunktionen zu einem modularen, KI-gestützten Lernsystem:</p>
+            
+            <p><strong>1. KI-Chat als Lernbegleiter</strong><br>
+            Fragen stellen, Aufgaben generieren, Inhalte klären – der Chat ist die zentrale Schnittstelle zwischen Mensch und System.</p>
+            
+            <p><strong>2. Personalisierte Fragebank</strong><br>
+            Alle generierten Aufgaben werden gespeichert, kategorisiert und stehen für Wiederholung & Selbsttests bereit. Zusätzlich zur automatischen Generierung von Übungen können Lernende auch eigene Aufgaben als Text oder Bild hochladen. Die Inhalte werden anschließend durch ein kombiniertes Review-System geprüft: eine erste KI-gestützte Vorstrukturierung, gefolgt von einer manuellen Freigabe durch Lehrkräfte. So entsteht eine verlässliche, kollaborative Übungsdatenbank, aus der personalisierte Lernbögen erstellt werden können.</p>
+            
+            <p><strong>3. Vernetztes Wissensmanagement</strong><br>
+            Eigene Materialien können eingebunden, Lernverläufe verfolgt und Inhalte kontextbasiert miteinander verknüpft werden.</p>
+
+            <div class="diagram-stack">
+                <img src="assets/study-buddy/user-flow.png" alt="User Flow">
+                <img src="assets/study-buddy/info-structure.png" alt="Information Structure">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: Wireframes & Components -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Wireframes<br>&<br>Komponenten</h2>
+        </div>
+        <div class="section-body">
+            <p>Die frühen Wireframes dienten dazu, zentrale Nutzerflows abzubilden und die Informationsstruktur zu klären.</p>
+            <img src="assets/study-buddy/wireframes.png" alt="Wireframes" style="width: 100%; margin: 20px 0 40px 0;">
+
+            <p>Das Interface wurde modular aufgebaut – vom Design-Token über interaktive Elemente bis hin zu komplexen UI-Mustern.<br>
+            Typografie, Farbe, Spacing und Grid bilden die Grundlage <strong>(Atoms)</strong>, die in funktionalen Komponenten <strong>(Molekülen)</strong> wie Buttons, Inputs oder Chips weiterentwickelt wurden. Daraus entstanden interaktive Module <strong>(Organismen)</strong>, die Navigation, Aufgabensteuerung und Wissenstransfer visuell strukturieren.</p>
+            
+            <!-- Components Fan (Card Deck) -->
+            <div class="components-fan">
+                <!-- Cards 2-5 (Behind) -->
+                <img src="assets/study-buddy/components2.png" class="comp-card c2" alt="Component 2">
+                <img src="assets/study-buddy/components3.png" class="comp-card c3" alt="Component 3">
+                <img src="assets/study-buddy/components4.png" class="comp-card c4" alt="Component 4">
+                <img src="assets/study-buddy/components5.png" class="comp-card c5" alt="Component 5">
+                <!-- Card 1 (Front Label) -->
+                <img src="assets/study-buddy/components1.png" class="comp-card label" alt="Component 1 Label">
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: Key Screens -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Key Screens</h2>
+        </div>
+        <div class="section-body">
+            <!-- Group 1: Chatbot -->
+            <div class="keyscreen-group">
+                <div class="keyscreen-title">Chatbot: Chat mit der KI</div>
+                <p>Im interaktiven Chat stellen Schüler:innen frei Fragen, lassen sich Inhalte erklären oder passende Übungen generieren. <strong>Prompt-Chips geben Impulse und senken die Einstiegshürde für ungeübte Nutzer:innen.</strong></p>
+                <div class="keyscreen-images">
+                    <img src="assets/study-buddy/chatbot1.png" alt="Chatbot Screen 1">
+                    <img src="assets/study-buddy/chatbot2.png" alt="Chatbot Screen 2">
+                </div>
+            </div>
+
+            <!-- Group 2: Workbook -->
+            <div class="keyscreen-group">
+                <div class="keyscreen-title">Workbook: Fragebank</div>
+                <p>Alle generierten und hochgeladenen Aufgaben werden im persönlichen Workbook gespeichert, können wiederholt, überprüft und von der KI oder Lehrkräften korrigiert werden.</p>
+                <div class="keyscreen-images">
+                    <img src="assets/study-buddy/workbook1.png" alt="Workbook Screen 1">
+                    <img src="assets/study-buddy/workbook2.png" alt="Workbook Screen 2">
+                </div>
+            </div>
+
+            <!-- Group 3: Database -->
+            <div class="keyscreen-group">
+                <div class="keyscreen-title">Wissensnetz: Management & Recherche</div>
+                <p>Auf Basis eines strukturierten Lehrwerks-Datenbestands verbindet die KI relevante Inhalte automatisch miteinander. Lernende können diese Verknüpfungen ergänzen, eigene Notizen hinzufügen und so ein individuelles Wissensnetz aufbauen.</p>
+                <div class="keyscreen-images">
+                    <img src="assets/study-buddy/datenbank1.png" alt="Database Screen 1">
+                    <img src="assets/study-buddy/datenbank2.png" alt="Database Screen 2">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: Reflexion & Next Steps -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">Reflexion<br>&<br>Next Steps</h2>
+        </div>
+        <div class="section-body">
+            <p>Die Konzeption von Study Buddy zeigt, wie KI-basierte Systeme die Struktur und Nutzung von Lernmaterialien transformieren können: weg von linearer Informationsvermittlung hin zu vernetzten, individualisierten Lernprozessen.<br>
+            Gleichzeitig wird deutlich: um das Potenzial eines solchen Systems vollständig auszuschöpfen, sind weiterführende Schritte nötig.<br>
+            Ein geplanter MVP-Prototyp soll reale Interaktionen testen, z. B. durch eine einfache Benutzeroberfläche mit GPT-Anbindung, Material-Upload und automatischer Aufgabengenerierung.</p>
+            
+            <p>Langfristig bieten sich Erweiterungen an in Richtung:</p>
+            <ul>
+                <li>adaptive Lernpfade auf Basis von Fehleranalyse</li>
+                <li>Integration von Gamification-Elementen</li>
+                <li>Datenschutzkonzepte für schulische Umgebungen</li>
+            </ul>
+
+            <p>Study Buddy versteht sich nicht als fertiges Produkt, sondern als ein Designvorschlag – ein Konzept, das die Zukunft des Lernens mitgestalten will.</p>
+        </div>
+    </section>
+
+    <!-- Section 9: End Hero -->
+    <div class="end-hero">
+        <img src="assets/study-buddy/endhero.png" alt="Study Buddy Conclusion">
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+        <div>Based in Germany</div>
+        <div>© 2026 Qianyi Cheng</div>
+    </div>
+
+</body>
+</html>

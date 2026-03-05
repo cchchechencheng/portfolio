@@ -1,0 +1,217 @@
+    /* --- 全局变量与重置 --- */
+    :root {
+        --bg-color: #F2F2F2;
+        --text-color: #1a1a1a;
+        --accent-color: #FF4500;
+        --transition-speed: 0.5s;
+    }
+
+    body {
+        margin: 0;
+        font-family: "Montserrat", sans-serif; /* 这里的字体改成了 Montserrat */
+        box-sizing: border-box;
+        transition: background-color 0.8s cubic-bezier(0.25, 1, 0.5, 1); /* 背景平滑过渡 */
+        background-color: var(--bg-color);
+        min-height: 100vh;
+    }
+
+    /* 主页（单页应用模式）专用样式 */
+    body.is-home {
+        padding: 40px;
+        height: 100vh;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    /* 项目详情页（长滚动模式）专用样式 */
+    body.is-project {
+        padding: 0;
+        display: block;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    body.is-project .footer {
+        padding: 40px; /* 项目页需要侧边距，而主页body已自带padding */
+    }
+
+    /* --- 跨页面的固定导航栏 (Project/Journal) --- */
+    .project-nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        padding: 0 40px;
+        box-sizing: border-box;
+        z-index: 1000;
+        background: rgba(255, 255, 255, 0.4); 
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        transition: all 0.3s ease;
+    }
+
+    .project-logo {
+        font-size: 18px;
+        font-weight: 800;
+        color: #000;
+        text-decoration: none;
+        transition: opacity 0.3s ease;
+    }
+
+    .project-logo:hover {
+        opacity: 0.7;
+        text-decoration: underline;
+    }
+
+    /* --- 动态背景层 (用于模拟图片淡入淡出) --- */
+    .bg-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+        opacity: 0;
+        transition: opacity 0.8s ease;
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.6) blur(4px); /* 1. 压暗背景 2. 增加模糊，提升文字可读性 */
+        transform: scale(1.05); /* 稍微放大一点防止模糊边缘露白 */
+    }
+
+    /* --- 导航系统 --- */
+    .logo {
+        font-size: 18px;
+        font-weight: 800; /* Logo 粗一点 */
+        z-index: 10;
+        transition: color 0.5s ease;
+        /* 固定定位，与详情页导航栏位置完全一致 */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 60px;
+        padding: 0 40px;
+        display: flex;
+        align-items: center;
+        box-sizing: border-box;
+        pointer-events: none; /* 让鼠标穿透，不挡下面内容（除非它是链接） */
+    }
+
+    .nav-container {
+        align-self: flex-start; /* 既然有子菜单，靠左对齐可能更好看，或者你可以改回 center */
+        margin-left: 5vw; /* 给左边留点呼吸感 */
+        margin-top: auto; /* 上下自动边距实现垂直居中 */
+        margin-bottom: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        z-index: 10;
+    }
+
+    /* 一级菜单 */
+    .main-item {
+        font-size: 8vw;
+        font-weight: 600; /* Montserrat 稍微粗一点更有质感 */
+        line-height: 1.0;
+        cursor: pointer;
+        color: #B0B0B0;
+        transition: all 0.4s ease;
+        position: relative;
+        text-decoration: none;
+        display: inline-block;
+    }
+
+    .main-item:hover, .main-item.active {
+        color: var(--text-color); /* 激活变黑 */
+        padding-left: 20px;
+    }
+
+    /* 序号 */
+    .main-item::before {
+        content: attr(data-index);
+        font-size: 18px;
+        font-weight: 400;
+        position: absolute;
+        left: -40px;
+        top: 15px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    .main-item:hover::before { opacity: 1; color: var(--accent-color); }
+
+    /* --- 手风琴子菜单 (Accordion) --- */
+    .sub-menu-container {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.8s cubic-bezier(0.19, 1, 0.22, 1); /* 极其丝滑的贝塞尔曲线 */
+        padding-left: 20px;
+    }
+
+    /* 当鼠标在 Projects 区域时，展开子菜单 */
+    .nav-group:hover .sub-menu-container {
+        max-height: 400px; /* 只要比内容高就行 */
+    }
+
+    .sub-item {
+        display: block;
+        font-size: 3vw; /* 子菜单小一点 */
+        font-weight: 400;
+        color: #888;
+        margin-top: 15px;
+        cursor: pointer;
+        transition: color 0.3s ease, transform 0.3s ease;
+        text-decoration: none;
+    }
+
+    .sub-item:hover {
+        color: var(--text-color);
+        transform: translateX(10px);
+    }
+
+    /* --- 右下角浮动信息 (Project Info) --- */
+    .project-info {
+        position: fixed;
+        bottom: 120px; /* 抬高位置，避免与 Footer 重叠 */
+        right: 40px;
+        text-align: right;
+        max-width: 300px;
+        opacity: 0;
+        transform: translateY(20px);
+        transition: all 0.5s ease;
+        z-index: 10;
+        pointer-events: none; /* 也就是鼠标穿透，不挡操作 */
+    }
+    
+    .project-info.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .info-title { font-size: 14px; font-weight: 700; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px;}
+    .info-desc { font-size: 16px; font-weight: 400; line-height: 1.4; }
+
+    /* --- 页脚 --- */
+    .footer {
+        display: flex;
+        justify-content: space-between;
+        font-size: 14px;
+        color: #888;
+        border-top: 1px solid rgba(0,0,0,0.1);
+        padding-top: 20px;
+        z-index: 10;
+        transition: color 0.5s ease, border-color 0.5s ease;
+    }
+
+    /* --- 剧场模式状态 (当背景变深时，文字变白) --- */
+    body.dark-mode .main-item { color: rgba(255,255,255,0.3); }
+    body.dark-mode .main-item:hover { color: #fff; }
+    body.dark-mode .sub-item { color: rgba(255,255,255,0.5); }
+    body.dark-mode .sub-item:hover { color: #fff; }
+    body.dark-mode .logo, body.dark-mode .footer, body.dark-mode .project-info { color: #fff; }
+    body.dark-mode .footer { border-top-color: rgba(255,255,255,0.2); }
