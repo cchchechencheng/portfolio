@@ -9,11 +9,11 @@
 
 ## 1. 左侧固定区域 (Sticky Profile)
 **个人肖像照**: Image: [profile.jpg]
-**简历文件**: Link: [Qianyi_Cheng_CV.pdf]
 
 ---
 
 ## 2. 右侧大标题 (Main Title)
+**简历链接**: Link: [https://drive.google.com/file/d/12V3yWxdDMYXkntMvjYfcB4NgAJxXcrle/view?usp=sharing]
 **H1 标题**: Text: [Hi,<br>ich bin Qianyi Cheng.]
 *(注：可以使用 `<br>` 来强制换行)*
 

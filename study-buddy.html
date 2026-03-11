@@ -148,11 +148,31 @@
         box-sizing: border-box;
     }
 
-    video {
+    /* Video Container (Responsive Iframe) */
+    .video-container {
         width: 100%;
-        height: auto;
-        display: block;
-        border-radius: 4px; /* Optional subtle radius */
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 0 40px;
+        box-sizing: border-box;
+    }
+
+    .video-wrapper {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 ratio */
+        height: 0;
+        overflow: hidden;
+        border-radius: 4px;
+        background: #000;
+    }
+
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: 0;
     }
 
     /* Goal Section Grid */
@@ -344,10 +364,9 @@
 
     <!-- Video Demo -->
     <div class="video-container">
-        <video controls autoplay muted loop playsinline poster="assets/study-buddy/sb-hero-image.jpg">
-            <source src="assets/study-buddy/sb_video.mp4" type="video/mp4">
-            Your browser does not support the video tag.
-        </video>
+        <div class="video-wrapper">
+            <iframe src="https://www.youtube.com/embed/JDH35ZlDtDo?rel=0&modestbranding=1" title="Study Buddy Video Demo" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
     </div>
 
     <!-- Section 2: Problem -->
