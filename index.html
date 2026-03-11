@@ -94,12 +94,15 @@
                 const color = item.getAttribute('data-color');
                 const image = item.getAttribute('data-image');
                 
-                bgLayer.style.backgroundColor = color; // 颜色作为底色，防止图片加载慢
-                
                 if (image) {
                     bgLayer.style.backgroundImage = `url('${image}')`;
+                    bgLayer.style.backgroundColor = 'transparent'; // 有图片时去掉底色，防止加载闪烁
+                } else if (color) {
+                    bgLayer.style.backgroundImage = 'none';
+                    bgLayer.style.backgroundColor = color; // 没有图片时（如 Journals）显示纯色底色
                 } else {
                     bgLayer.style.backgroundImage = 'none';
+                    bgLayer.style.backgroundColor = 'transparent';
                 }
                 
                 bgLayer.style.opacity = '1';
