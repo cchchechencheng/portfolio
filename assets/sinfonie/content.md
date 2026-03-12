@@ -17,6 +17,7 @@
 - Tag 1: Text: [Urban Design]
 - Tag 2: Text: [Product Design]
 - Tag 3: Text: [Sustainability]
+- Tag 4: Text: [ICIAD Gold Award 2025]
 
 ---
 
