@@ -104,21 +104,43 @@
         gap: 15px;
     }
 
-    .contact-link {
-        font-size: 1.2rem;
-        font-weight: 600;
-        color: #1a1a1a;
-        text-decoration: none;
-        position: relative;
-        width: fit-content;
+    /* Combined Intro Links */
+    .intro-links {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        font-size: 1.1rem;
+        margin-top: 10px;
     }
 
-    .contact-link::after {
+    .intro-link {
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s ease;
+    }
+
+    .intro-link-main {
+        color: #1a1a1a;
+        font-weight: 600;
+    }
+
+    .intro-link-sub {
+        color: #999;
+        font-weight: 500;
+    }
+
+    .intro-link:hover {
+        color: #1a1a1a;
+    }
+
+    /* Thin dynamic underline */
+    .intro-link::after {
         content: '';
         position: absolute;
         width: 100%;
-        height: 2px;
-        bottom: 0;
+        height: 1px;
+        bottom: -2px;
         left: 0;
         background-color: #1a1a1a;
         transform: scaleX(0);
@@ -126,9 +148,14 @@
         transition: transform 0.3s ease-out;
     }
 
-    .contact-link:hover::after {
+    .intro-link:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left;
+    }
+
+    .link-separator {
+        color: #ccc;
+        user-select: none;
     }
 
     /* Mobile Responsiveness */
@@ -171,12 +198,18 @@
         <!-- Right Column: Content -->
         <section class="about-right">
             
-            <!-- Title & Resume -->
-            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 20px;">
+            <!-- Title & Combined Links -->
+            <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 15px;">
                 <h1 class="about-title">Hi,<br>ich bin Qianyi Cheng.</h1>
-                <a href="https://drive.google.com/file/d/12V3yWxdDMYXkntMvjYfcB4NgAJxXcrle/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="contact-link" style="font-size: 1.5rem; margin-top: 10px;">
-                    CV ↗
-                </a>
+                <div class="intro-links">
+                    <a href="https://drive.google.com/file/d/12V3yWxdDMYXkntMvjYfcB4NgAJxXcrle/view?usp=sharing" target="_blank" rel="noopener noreferrer" class="intro-link intro-link-main">CV ↗</a>
+                    <span class="link-separator">·</span>
+                    <a href="mailto:chengqianyi2017@outlook.com" class="intro-link intro-link-sub">E-Mail</a>
+                    <span class="link-separator">·</span>
+                    <a href="https://linkedin.com/in/qianyi-cheng-b79891297" target="_blank" rel="noopener noreferrer" class="intro-link intro-link-sub">LinkedIn</a>
+                    <span class="link-separator">·</span>
+                    <a href="https://instagram.com/qych.8991" target="_blank" rel="noopener noreferrer" class="intro-link intro-link-sub">Instagram</a>
+                </div>
             </div>
 
             <!-- Bio -->
@@ -200,16 +233,6 @@
                 <div class="cat-container">
                     <img src="assets/about-me/cai.jpg" alt="Cheng Cai the Maine Coon" class="cat-img">
                     <small style="color: #666; font-style: italic;">Chefkritiker. Flauschig. Unerbittlich.</small>
-                </div>
-            </div>
-
-            <!-- Contact -->
-            <div class="about-section">
-                <h2>Kontakt</h2>
-                <div class="contact-links">
-                    <a href="mailto:chengqianyi2017@outlook.com" class="contact-link">E-Mail ↗</a>
-                    <a href="https://linkedin.com/in/qianyi-cheng-b79891297" target="_blank" rel="noopener noreferrer" class="contact-link">LinkedIn ↗</a>
-                    <a href="https://instagram.com/qych.8991" target="_blank" rel="noopener noreferrer" class="contact-link">Instagram ↗</a>
                 </div>
             </div>
 
