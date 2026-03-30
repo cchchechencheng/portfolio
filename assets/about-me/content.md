@@ -34,7 +34,7 @@ Meine größte Stärke ist nicht ein einzelnes Tool oder eine bestimmte Methode,
 **Section Title**: Text: [Wie ich denke]
 **Paragraphs**: 
 Text: [
-Ich bin keine Spezialistin, sondern eine Generalistin mit ausgeprägter Mustererkennung. Ich sehe Zusammenhänge zwischen Dingen, die auf den ersten Blick nichts miteinander zu tun haben, und habe gelernt, diesem Instinkt zu vertrauen. Ich eigne mir Neues schnell an, denke über Disziplinen hinweg und bringe unerwartete Referenzen in Projekte ein.
+Ich bin eine Generalistin mit ausgeprägter Mustererkennung. Ich sehe Zusammenhänge zwischen Dingen, die auf den ersten Blick nichts miteinander zu tun haben, und habe gelernt, diesem Instinkt zu vertrauen. Ich eigne mir Neues schnell an, denke über Disziplinen hinweg und bringe unerwartete Referenzen in Projekte ein.
 
 Aktuell beschäftige ich mich mit der Frage, wie KI die Denkweise von Designer:innen verändert. Nicht nur als Werkzeug, sondern als gestalterisches Material. Vibe Coding, KI-gestützte Ideenfindung, Mensch-KI-Kollaboration: Das sind für mich keine Schlagwörter, sondern meine tatsächliche Arbeitsweise.
 ]

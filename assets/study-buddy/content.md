@@ -160,13 +160,23 @@ Auf Basis eines strukturierten Lehrwerks-Datenbestands verbindet die KI relevant
 
 ---
 
+## 7.5. Live Demo
+**Section Title**: Text: [Live Demo]
+**Main Content**:
+Text: [
+Ein funktionsfähiger Prototyp – entwickelt mit Claude Code (Anthropic) als Mensch-KI-Kollaboration. Die Anwendung demonstriert die zentralen Funktionen des Konzepts: KI-Chat, Workbook und Wissensnetz.
+]
+**Link**: https://study-buddy-0m3m.onrender.com
+**Zugangscode**: studybuddy2026
+
+---
+
 ## 8. Reflexion  &  Next Steps
 **Section Title**: Text: [Reflexion  &  Next Steps]
 **Main Content**:
 Text: [
-Die Konzeption von Study Buddy zeigt, wie KI-basierte Systeme die Struktur und Nutzung von Lernmaterialien transformieren können: weg von linearer Informationsvermittlung hin zu vernetzten, individualisierten Lernprozessen.  
-Gleichzeitig wird deutlich: um das Potenzial eines solchen Systems vollständig auszuschöpfen, sind weiterführende Schritte nötig.  
-Ein geplanter MVP-Prototyp soll reale Interaktionen testen, z. B. durch eine einfache Benutzeroberfläche mit GPT-Anbindung, Material-Upload und automatischer Aufgabengenerierung.  
+Die Konzeption von Study Buddy zeigt, wie KI-basierte Systeme die Struktur und Nutzung von Lernmaterialien transformieren können: weg von linearer Informationsvermittlung hin zu vernetzten, individualisierten Lernprozessen.
+Um das Konzept in die Praxis zu überführen, wurde ein funktionsfähiger MVP entwickelt – als Mensch-KI-Kollaboration mit Claude Code (Anthropic). Der Prototyp ist online erreichbar und demonstriert die zentralen Interaktionen des Systems.
 Langfristig bieten sich Erweiterungen an in Richtung:  
 
 - adaptive Lernpfade auf Basis von Fehleranalyse
