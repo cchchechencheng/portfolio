@@ -13,7 +13,7 @@
 ---
 
 ## 2. 右侧大标题 (Main Title)
-**简历链接**: Link: [https://drive.google.com/file/d/12V3yWxdDMYXkntMvjYfcB4NgAJxXcrle/view?usp=sharing]
+**简历链接**: Link: [https://drive.google.com/file/d/1yZ6booRdGSE-_mHz9fk1MnaQH2kwoQws/view?usp=drive_link]
 **H1 标题**: Text: [Hi,<br>ich bin Qianyi Cheng.]
 *(注：可以使用 `<br>` 来强制换行)*
 
