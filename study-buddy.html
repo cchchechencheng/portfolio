@@ -12,168 +12,8 @@
 
 <style>
     /* Study Buddy Specific Styles */
-    
-    /* 2. Hero Section */
-    .project-hero {
-        width: 100%;
-        height: 100vh;
-        background-image: url('assets/study-buddy/sb-hero-image.jpg');
-        background-size: cover;
-        background-position: center;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        padding: 0 10%; /* Increase padding for focus */
-        box-sizing: border-box;
-        color: white; /* Assume dark image, text white. Or prompt said #F2F2F2 bg? No, full screen image. */
-        position: relative;
-    }
 
-    /* Overlay for text readability on hero image */
-    .hero-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4); /* Dark overlay */
-        z-index: 1;
-    }
-
-    .hero-content {
-        position: relative;
-        z-index: 2;
-        max-width: 800px;
-    }
-
-    .hero-title {
-        font-size: clamp(3rem, 8vw, 6rem); /* Responsive huge font */
-        font-weight: 800;
-        line-height: 1.1;
-        margin-bottom: 20px;
-        letter-spacing: -2px;
-    }
-
-    .hero-subtitle {
-        font-size: clamp(1.2rem, 3vw, 2rem);
-        font-weight: 700;
-        margin-bottom: 15px;
-        line-height: 1.3;
-    }
-
-    .hero-intro {
-        font-size: 1.2rem;
-        font-weight: 400;
-        margin-bottom: 30px;
-        line-height: 1.6;
-        opacity: 0.9;
-    }
-
-    .hero-tags {
-        font-size: 0.9rem;
-        font-weight: 600;
-        opacity: 0.8;
-        text-transform: uppercase;
-        letter-spacing: 1px;
-    }
-    
-    .hero-tags div {
-        margin-bottom: 8px; /* 增加竖向间距 */
-    }
-
-    /* 3. Content Sections (Grid Layout) */
-    .content-section {
-        padding: 120px 40px;
-        max-width: 1200px;
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: 35% 1fr; /* 调整为 35% 左侧，给标题更多空间 */
-        gap: 80px; /* 增加间距，彻底防止重叠 */
-    }
-
-    .section-header {
-        position: sticky;
-        top: 100px; /* Stick below nav */
-        height: fit-content;
-    }
-
-    .section-title {
-        font-size: 3rem;
-        font-weight: 700;
-        color: #1A1A1A;
-        margin: 0;
-        line-height: 1.2;
-        text-transform: uppercase; /* 强制大写 */
-        word-break: break-word; /* 防止长单词溢出 */
-        hyphens: auto; /* 允许自动连字符 */
-    }
-
-    .section-body {
-        font-size: 1rem;
-        line-height: 1.8;
-        color: #333;
-    }
-
-    .section-body p {
-        margin-bottom: 20px;
-    }
-    
-    .section-body ul, .section-body ol {
-        padding-left: 20px;
-        margin-bottom: 20px;
-    }
-
-    .section-body li {
-        margin-bottom: 10px;
-    }
-
-    .placeholder-image {
-        width: 100%;
-        height: 400px;
-        background-color: #ddd;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #888;
-        font-weight: 600;
-        margin-top: 20px;
-    }
-
-    /* 4. Full Width Video */
-    .video-container {
-        width: 100%;
-        max-width: 1400px; /* Optional constraints */
-        margin: 0 auto;
-        padding: 0 40px; /* Add side padding */
-        box-sizing: border-box;
-    }
-
-    /* Video Container (Responsive Iframe) */
-    .video-container {
-        width: 100%;
-        max-width: 1400px;
-        margin: 0 auto;
-        padding: 0 40px;
-        box-sizing: border-box;
-    }
-
-    .video-wrapper {
-        position: relative;
-        padding-bottom: 56.25%; /* 16:9 ratio */
-        height: 0;
-        overflow: hidden;
-        border-radius: 4px;
-        background: #000;
-    }
-
-    .video-wrapper iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: 0;
-    }
+    .project-hero { background-image: url('assets/study-buddy/sb-hero-image.jpg'); }
 
     /* Goal Section Grid */
     .goal-grid {
@@ -318,39 +158,10 @@
         display: block;
     }
 
-    /* Mobile Responsiveness */
+    /* Mobile Responsiveness (page-specific) */
     @media (max-width: 768px) {
-        .content-section {
-            grid-template-columns: 1fr; /* Stack vertically */
-            padding: 60px 20px;
-            gap: 20px;
-        }
-
-        .goal-grid {
-            grid-template-columns: 1fr; /* Stack vertically on mobile */
-            gap: 40px;
-        }
-
-        .keyscreen-images {
-            grid-template-columns: 1fr;
-        }
-
-        .section-header {
-            position: static; /* Remove sticky on mobile */
-            margin-bottom: 20px;
-        }
-
-        .section-title {
-            font-size: 2rem;
-        }
-
-        .project-hero {
-            padding: 0 20px;
-        }
-
-        .project-nav {
-            padding: 0 20px;
-        }
+        .goal-grid { grid-template-columns: 1fr; gap: 40px; }
+        .keyscreen-images { grid-template-columns: 1fr; }
     }
 
 </style>
@@ -521,6 +332,7 @@
                 <!-- Card 1 (Front Label) -->
                 <img src="assets/study-buddy/components1.png" class="comp-card label" alt="Component 1 Label">
             </div>
+            <span class="figure-caption" style="text-align: center; margin-top: 80px; display: block;">Hover für Details.</span>
         </div>
     </section>
 

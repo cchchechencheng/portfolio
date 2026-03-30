@@ -68,9 +68,9 @@
         </div>
     </div>
 
-    <div class="project-info" id="projectInfo">
+    <div class="project-info visible" id="projectInfo">
         <div class="info-title" id="infoTitle"></div>
-        <div class="info-desc" id="infoDesc"></div>
+        <div class="info-desc" id="infoDesc" style="color: #aaa;">Hover to explore.</div>
     </div>
 
     <div class="footer">
@@ -119,6 +119,7 @@
                 // 3. 更新并显示右下角信息
                 infoTitle.textContent = item.getAttribute('data-title');
                 infoDesc.textContent = item.getAttribute('data-desc');
+                infoDesc.style.color = '';
                 projectInfo.classList.add('visible');
             });
 
@@ -126,7 +127,9 @@
                 // 鼠标离开项目时，恢复默认状态
                 bgLayer.style.opacity = '0';
                 body.classList.remove('dark-mode');
-                projectInfo.classList.remove('visible');
+                infoTitle.textContent = '';
+                infoDesc.textContent = 'Hover to explore.';
+                infoDesc.style.color = '#aaa';
             });
         });
 
@@ -134,7 +137,9 @@
         document.querySelector('.nav-container').addEventListener('mouseleave', () => {
             bgLayer.style.opacity = '0';
             body.classList.remove('dark-mode');
-            projectInfo.classList.remove('visible');
+            infoTitle.textContent = '';
+            infoDesc.textContent = 'Hover to explore.';
+            infoDesc.style.color = '#aaa';
         });
     </script>
 
