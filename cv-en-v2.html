@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CV – Qianyi Cheng (English v2)</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: "Montserrat", sans-serif;
+    font-size: 10pt;
+    line-height: 1.5;
+    color: #1a1a1a;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 40px;
+  }
+  h1 { font-size: 22pt; font-weight: 800; margin-bottom: 2px; }
+  .subtitle { font-size: 11pt; font-weight: 600; color: #555; margin-bottom: 16px; }
+  .contact { font-size: 9pt; color: #666; margin-bottom: 32px; }
+  .contact a { color: #666; text-decoration: none; }
+  .contact span::after { content: "  ·  "; color: #ccc; }
+  .contact span:last-child::after { content: ""; }
+
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 32px; }
+  .col-full { grid-column: 1 / -1; }
+
+  h2 {
+    font-size: 10pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-bottom: 1px solid #1a1a1a;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+  }
+
+  .entry { margin-bottom: 16px; }
+  .entry-header { display: flex; justify-content: space-between; align-items: baseline; }
+  .entry-title { font-weight: 700; font-size: 10pt; }
+  .entry-date { font-size: 9pt; color: #888; white-space: nowrap; }
+  .entry-sub { font-size: 9pt; color: #555; font-style: italic; margin-bottom: 4px; }
+  .entry-body { font-size: 9.5pt; color: #333; }
+  .entry-body li { margin-bottom: 3px; }
+  .entry-body ul { padding-left: 16px; list-style-type: "–  "; }
+
+  .skills-grid { display: grid; grid-template-columns: 120px 1fr; gap: 4px 16px; font-size: 9.5pt; }
+  .skills-label { font-weight: 600; color: #555; }
+  .skills-value { color: #333; }
+
+  .languages { display: flex; gap: 24px; font-size: 9.5pt; margin-top: 8px; }
+  .lang-item strong { font-weight: 600; }
+
+  @media print {
+    body { margin: 0; padding: 20px; max-width: 100%; }
+  }
+</style>
+</head>
+<body>
+
+<h1>Qianyi Cheng</h1>
+<div class="subtitle">Interaction Designer</div>
+<div class="contact">
+  <span>Offenbach / Frankfurt, Germany</span>
+  <span><a href="https://qianyi.design">qianyi.design</a></span>
+  <span><a href="mailto:chengqianyi2017@outlook.com">chengqianyi2017@outlook.com</a></span>
+  <span>+49 151 65721741</span>
+</div>
+
+<div class="grid">
+
+  <!-- Left column: Education + Awards + Skills -->
+  <div>
+    <h2>Education</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">HfG Offenbach</span>
+      </div>
+      <div class="entry-sub">Diplom in Design, expected 2026</div>
+      <div class="entry-body">Focus: Interaction Design and Human–Computer Interaction</div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">China Agricultural University</span>
+      </div>
+      <div class="entry-sub">Bachelor studies in Product Design, 2016 – 2017</div>
+      <div class="entry-body">Continued design studies in Germany.</div>
+    </div>
+
+    <h2>Awards</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">ICIAD Award / Gold Award</span>
+        <span class="entry-date">2025</span>
+      </div>
+      <div class="entry-body">Awarded for the project SINFONIE.</div>
+    </div>
+
+    <h2>Skills & Languages</h2>
+
+    <div class="skills-grid">
+      <span class="skills-label">Design & Prototyping</span>
+      <span class="skills-value">Figma, Webflow, Framer, Adobe CC, Blender</span>
+
+      <span class="skills-label">AI-assisted Design</span>
+      <span class="skills-value">Claude Code, Codex, Cline, Midjourney, ChatGPT, Gemini; ideation, visual exploration, interface prototyping, workflow design</span>
+
+      <span class="skills-label">Frontend & Automation</span>
+      <span class="skills-value">HTML/CSS/JS fundamentals, p5.js, Google Apps Script, GCP basics, Arduino fundamentals</span>
+
+      <span class="skills-label">Research & UX Methods</span>
+      <span class="skills-value">User Research, Usability Testing, Information Architecture, Interaction Flows</span>
+    </div>
+
+    <div class="languages">
+      <div class="lang-item"><strong>English</strong> (fluent)</div>
+      <div class="lang-item"><strong>German</strong> (fluent)</div>
+      <div class="lang-item"><strong>Chinese</strong> (native)</div>
+    </div>
+  </div>
+
+  <!-- Right column: Projects + Work Experience -->
+  <div>
+    <h2>Projects</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Study Buddy / AI-Powered Learning Assistant</span>
+      </div>
+      <div class="entry-sub">Interaction Design Project | 2024 – 2025</div>
+      <div class="entry-body">
+        <ul>
+          <li>Designed a system for personalized learning support that combines chatbot interaction with a user-curated workbook to make individualized learning more efficient.</li>
+          <li>Conceived a knowledge network visualization (inspired by Obsidian) to promote active recall and spaced repetition.</li>
+          <li>Built a functional MVP with Claude Code (Anthropic), translating the concept into a testable interactive prototype.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">SINFONIE / Urban Re-Design Project</span>
+      </div>
+      <div class="entry-sub">Urban Design Project | 2024</div>
+      <div class="entry-body">
+        <ul>
+          <li>Developed a concept to foster social interaction and collective experience in public space.</li>
+          <li>Conducted field research on movement patterns and human–environment dynamics along the Main riverbank.</li>
+          <li>Visualized speculative scenarios through maps, models, and narrative representation.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">AR Cycling / Augmented Reality Cycling Experience</span>
+      </div>
+      <div class="entry-sub">UI/UX + XR Exploration | 2023</div>
+      <div class="entry-body">
+        <ul>
+          <li>Conceived an AR interface to improve navigation and safety in urban traffic.</li>
+          <li>Created interaction scenarios and designed UI overlays in After Effects.</li>
+          <li>Produced a demo video to illustrate and evaluate key usage scenarios.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">AI4GCC / Logo & Visual Identity</span>
+      </div>
+      <div class="entry-sub">Freelance Project | 2023</div>
+      <div class="entry-body">
+        <ul>
+          <li>Designed the official logo and visual identity for AI4GCC – an initiative by Mila (Québec AI Institute) and Salesforce Research.</li>
+          <li>The final design was officially adopted and is in use on the project website.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h2>Work Experience</h2>
+
+    <div class="entry">
+      <div class="entry-header">
+        <span class="entry-title">Sinotrans Air Transportation GmbH (Xiaomi Logistics)</span>
+      </div>
+      <div class="entry-sub">Working Student, Logistics | Oct 2025 – Dec 2025</div>
+      <div class="entry-body">
+        <ul>
+          <li>Supported order picking, shipment processing, and daily warehouse operations.</li>
+          <li>Gained practical insight into supply chain workflows and product logistics in an international technology context.</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+</body>
+</html>

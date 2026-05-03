@@ -21,44 +21,63 @@
         <div class="nav-group">
             <a class="main-item" data-index="01" href="#">Projects</a>
             <div class="sub-menu-container">
-                <a class="sub-item" 
+                <a class="sub-item"
                    href="study-buddy.html"
-                   data-color="#E63946" 
+                   data-color="#E63946"
                    data-image="assets/home/studybuddy-hero-image.jpg"
                    data-dark="true"
                    data-title="Das Schulbuch von morgen – schon heute nutzbar."
-                   data-desc="Mehr als ein E‑Book: ein KI‑gestütztes, inklusives, immersives und interaktives Lernsystem.">
+                   data-desc="Mehr als ein E‑Book: ein KI‑gestütztes, inklusives, immersives und interaktives Lernsystem."
+                   data-i18n-title="home.projects.studybuddy.title"
+                   data-i18n-desc="home.projects.studybuddy.desc">
                    STUDY BUDDY
                 </a>
                 
-                <a class="sub-item" 
+                <a class="sub-item"
                    href="ar-cycling.html"
-                   data-color="#457B9D" 
+                   data-color="#457B9D"
                    data-image="assets/home/arcycling-hero-image.jpg"
                    data-dark="true"
                    data-title="Radfahren neu gedacht – mit Augmented Reality."
-                   data-desc="Ein interaktives Fahrradkonzept für ein immersives, intelligentes Fahrerlebnis.">
+                   data-desc="Ein interaktives Fahrradkonzept für ein immersives, intelligentes Fahrerlebnis."
+                   data-i18n-title="home.projects.arcycling.title"
+                   data-i18n-desc="home.projects.arcycling.desc">
                    AR CYCLING
                 </a>
 
-                <a class="sub-item" 
+                <a class="sub-item"
                    href="sinfonie.html"
-                   data-color="#A8DADC" 
+                   data-color="#A8DADC"
                    data-image="assets/home/sinfonie-hero-image.jpg"
                    data-dark="true"
                    data-title="Ökologie trifft Öffentlichkeit."
-                   data-desc="Ein transformierbares Entwurfssystem für das Mainufer Offenbach – modular, ökologisch, menschlich.">
+                   data-desc="Ein transformierbares Entwurfssystem für das Mainufer Offenbach – modular, ökologisch, menschlich."
+                   data-i18n-title="home.projects.sinfonie.title"
+                   data-i18n-desc="home.projects.sinfonie.desc">
                    SINFONIE
+                </a>
+
+                <a class="sub-item"
+                   hidden
+                   href="this-page.html"
+                   data-color="#1A1A1A"
+                   data-dark="true"
+                   data-title="Wie dieses Portfolio entworfen und gebaut wurde."
+                   data-desc="Eine Fallstudie über die Gestaltung dieser Seite – mit Vibe Coding und Mensch-KI-Kollaboration."
+                   data-i18n-title="home.projects.thispage.title"
+                   data-i18n-desc="home.projects.thispage.desc">
+                   THIS PAGE
                 </a>
             </div>
         </div>
 
         <div class="nav-group">
             <a class="main-item" data-index="02" href="journals.html"
-               data-color="#1A1A1A" 
+               data-color="#1A1A1A"
                data-dark="true"
                data-title=""
-               data-desc="Persönliche Gedanken zu Designsystemen, zwischenmenschlichen Interaktionen und den Mechanismen des alltäglichen Lebens.">
+               data-desc="Persönliche Gedanken zu Designsystemen, zwischenmenschlichen Interaktionen und den Mechanismen des alltäglichen Lebens."
+               data-i18n-desc="home.projects.journals.desc">
                Journals
             </a>
         </div>
@@ -70,14 +89,15 @@
 
     <div class="project-info visible" id="projectInfo">
         <div class="info-title" id="infoTitle"></div>
-        <div class="info-desc" id="infoDesc" style="color: #aaa;">Hover to explore.</div>
+        <div class="info-desc" id="infoDesc" data-i18n="home.info.defaultHint" style="color: #aaa;">Hover to explore.</div>
     </div>
 
     <div class="footer">
-        <div>Based in Germany</div>
-        <div>© 2026 Qianyi Cheng</div>
+        <div data-i18n="common.footer.location">Based in Germany</div>
+        <div data-i18n="common.footer.copyright">© 2026 Qianyi Cheng</div>
     </div>
 
+    <script src="i18n.js"></script>
     <script>
         const subItems = document.querySelectorAll('.sub-item');
         const body = document.body;
@@ -128,7 +148,7 @@
                 bgLayer.style.opacity = '0';
                 body.classList.remove('dark-mode');
                 infoTitle.textContent = '';
-                infoDesc.textContent = 'Hover to explore.';
+                infoDesc.textContent = (window.i18n && window.i18n.t('home.info.defaultHint')) || 'Hover to explore.';
                 infoDesc.style.color = '#aaa';
             });
         });
@@ -138,7 +158,7 @@
             bgLayer.style.opacity = '0';
             body.classList.remove('dark-mode');
             infoTitle.textContent = '';
-            infoDesc.textContent = 'Hover to explore.';
+            infoDesc.textContent = (window.i18n && window.i18n.t('home.info.defaultHint')) || 'Hover to explore.';
             infoDesc.style.color = '#aaa';
         });
     </script>

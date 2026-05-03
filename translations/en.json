@@ -1,0 +1,341 @@
+{
+  "common": {
+    "footer": {
+      "location": "Based in Germany",
+      "copyright": "© 2026 Qianyi Cheng"
+    },
+    "backToJournals": "← Back to Journals"
+  },
+  "home": {
+    "projects": {
+      "studybuddy": {
+        "title": "The textbook of tomorrow – ready to use today.",
+        "desc": "More than an e-book: an AI-powered, inclusive, immersive, and interactive learning system."
+      },
+      "arcycling": {
+        "title": "Cycling reimagined – with Augmented Reality.",
+        "desc": "An interactive bicycle concept for an immersive, intelligent riding experience."
+      },
+      "sinfonie": {
+        "title": "Ecology meets public space.",
+        "desc": "A transformable design system for the Offenbach riverbank – modular, ecological, human."
+      },
+      "thispage": {
+        "title": "How this portfolio was designed and built.",
+        "desc": "A case study on the design of this website – with vibe coding and human–AI collaboration."
+      },
+      "journals": {
+        "desc": "Personal reflections on design systems, interpersonal interactions, and the mechanisms of everyday life."
+      }
+    },
+    "info": {
+      "defaultHint": "Hover to explore."
+    }
+  },
+  "about": {
+    "title": "Hi,<br>I'm Qianyi Cheng.",
+    "bio": {
+      "heading": "About Me",
+      "p1": "I study Interaction Design at HfG Offenbach and am about to complete my Diplom. I'm currently looking for an internship where I can truly learn something.",
+      "p2": "My greatest strength is not a single tool or a specific method, but making connections. I gather impulses from all directions: books, conversations, everyday observations, unrelated fields. At some point, these fragments condense into patterns. The moment scattered dots converge into a coherent idea is the part of design that drives me the most. The synthesis. The emergent."
+    },
+    "approach": {
+      "heading": "How I Think",
+      "p1": "I am a generalist with a strong sense of pattern recognition. I see connections between things that seem unrelated at first glance, and I have learned to trust that instinct. I pick up new things quickly, think across disciplines, and bring unexpected references into projects.",
+      "p2": "Currently, I am exploring how AI is changing the way designers think. Not just as a tool, but as a design material. Vibe coding, AI-assisted ideation, human–AI collaboration: these are not buzzwords for me, but my actual way of working."
+    },
+    "offscreen": {
+      "heading": "Off-Screen",
+      "p1": "When I'm not designing, most of my time is managed by my Maine Coon supervisor: <strong>Cheng Cai (程财)</strong>.",
+      "catCaption": "Chief critic. Fluffy. Relentless."
+    }
+  },
+  "studybuddy": {
+    "hero": {
+      "title": "Study Buddy",
+      "subtitle": "The textbook of tomorrow – ready to use today.",
+      "intro": "More than an e-book: an AI-powered, inclusive, immersive, and interactive learning system.",
+      "tags": [
+        "#UX Design",
+        "#UI Design",
+        "#Interaction Design"
+      ]
+    },
+    "overview": {
+      "heading": "Project<br>Overview",
+      "p1": "Study Buddy is an AI-powered digital textbook that transforms traditional schoolbooks into flexible, personalized learning paths. It goes beyond mere digitization and breaks the linearity of conventional teaching materials. Knowledge becomes interconnected, updatable, and interactively explorable.",
+      "p2": "With an interactive AI chat, an adaptive question bank, and personal knowledge management, Study Buddy supports students in learning efficiently, independently, and with motivation."
+    },
+    "demo": {
+      "heading": "Live<br>Demo",
+      "p1": "A functional prototype – developed via <strong>Vibe Coding</strong> with <strong>Claude Code (Anthropic)</strong> as a human–AI collaboration. The application demonstrates the core features of the concept: AI chat, workbook, and knowledge network.",
+      "cta": "Try Study Buddy ↗",
+      "code": "Access code: studybuddy2026"
+    },
+    "problem": {
+      "heading": "Target Group<br>&<br>Problem",
+      "p1": "Study Buddy is aimed at middle and high school students who are increasingly learning independently but often lack the tools to meaningfully connect content or review it systematically. Typical challenges in everyday learning:",
+      "item1title": "<strong>1. Linear Presentation</strong>",
+      "item1text": "Knowledge in textbooks is usually presented in isolation by subject, chapter, and grade level – real-world connections remain hidden.",
+      "item2title": "<strong>2. Unstructured Materials</strong>",
+      "item2text": "Personal notes, exercises, or class notes are often analog, scattered, and hard to retrieve.",
+      "item3title": "<strong>3. No Overview, No Feedback</strong>",
+      "item3text": "Practice progress is untraceable, mistakes repeat themselves, and an overview of what has been learned is missing."
+    },
+    "goal": {
+      "heading": "Objectives",
+      "item1title": "Personalize Learning",
+      "item1text": "Content adapts to the individual learning level and pace.",
+      "item2title": "Connect Knowledge",
+      "item2text": "Cross-disciplinary connections are made visible.",
+      "item3title": "Leverage Digital Strengths",
+      "item3text": "AI replaces static pages with interactive learning processes."
+    },
+    "research": {
+      "heading": "Research",
+      "item1title": "<strong>1. Analog textbooks are rigid</strong>",
+      "item1text": "Content is linear, subject-bound, and outdated – genuine interconnection is missing.",
+      "item2title": "<strong>2. Digital teaching materials remain superficial</strong>",
+      "item2text": "“Digitization” often just means PDF instead of print – without structural or didactic change.",
+      "item3title": "<strong>3. Teachers confirm these limitations</strong>",
+      "item3text": "In conversation with a teacher, it became clear: current tools offer little real support for individualized learning."
+    },
+    "concept": {
+      "heading": "Concept<br>&<br>System Architecture",
+      "p1": "Study Buddy responds flexibly to individual learning needs and connects three core functions into a modular, AI-powered learning system:",
+      "item1title": "<strong>1. AI Chat as Learning Companion</strong>",
+      "item1text": "Ask questions, generate exercises, clarify content – the chat is the central interface between human and system.",
+      "item2title": "<strong>2. Personalized Question Bank</strong>",
+      "item2text": "All generated exercises are saved, categorized, and available for review and self-testing. In addition to automatic exercise generation, learners can upload their own tasks as text or images. The content is then reviewed through a combined system: an initial AI-assisted pre-structuring, followed by manual approval from teachers. This creates a reliable, collaborative exercise database from which personalized study sheets can be generated.",
+      "item3title": "<strong>3. Interconnected Knowledge Management</strong>",
+      "item3text": "Personal materials can be integrated, learning progress tracked, and content linked contextually."
+    },
+    "wireframes": {
+      "heading": "Wireframes<br>&<br>Components",
+      "p1": "The early wireframes served to map out key user flows and clarify the information architecture.",
+      "p2": "The interface was built modularly – from design tokens to interactive elements to complex UI patterns.<br>Typography, color, spacing, and grid form the foundation <strong>(Atoms)</strong>, which were developed into functional components <strong>(Molecules)</strong> such as buttons, inputs, and chips. From these emerged interactive modules <strong>(Organisms)</strong> that visually structure navigation, task management, and knowledge transfer.",
+      "caption": "Hover for details."
+    },
+    "screens": {
+      "heading": "Key Screens",
+      "group1title": "Chatbot: Chat with the AI",
+      "group1text": "In the interactive chat, students freely ask questions, have content explained, or generate tailored exercises. <strong>Prompt chips provide impulses and lower the entry barrier for inexperienced users.</strong>",
+      "group2title": "Workbook: Question Bank",
+      "group2text": "All generated and uploaded exercises are saved in the personal workbook, where they can be repeated, reviewed, and corrected by the AI or teachers.",
+      "group3title": "Knowledge Network: Management & Research",
+      "group3text": "Based on a structured textbook dataset, the AI automatically connects relevant content. Learners can supplement these connections, add their own notes, and build an individualized knowledge network."
+    },
+    "reflection": {
+      "heading": "Reflection<br>&<br>Next Steps",
+      "p1": "The conceptualization of Study Buddy demonstrates how AI-based systems can transform the structure and use of learning materials: away from linear information delivery toward interconnected, individualized learning processes.<br>To translate the concept into practice, a functional MVP was developed – as a human–AI collaboration with Claude Code (Anthropic). The prototype is <a href=\"https://study-buddy-0m3m.onrender.com\" target=\"_blank\" rel=\"noopener noreferrer\">available online</a> (access code: studybuddy2026) and demonstrates the core interactions of the system.",
+      "p2": "In the long term, there are opportunities for expansion in the following areas:",
+      "listItems": [
+        "Adaptive learning paths based on error analysis",
+        "Integration of gamification elements",
+        "Data privacy concepts for educational environments"
+      ],
+      "p3": "Study Buddy is not intended as a finished product, but as a design proposal – a concept that aims to help shape the future of learning."
+    }
+  },
+  "arcycling": {
+    "hero": {
+      "title": "AR Cycling",
+      "subtitle": "Cycling reimagined – with Augmented Reality.",
+      "intro": "An interactive bicycle concept for an immersive, intelligent riding experience.",
+      "tags": [
+        "#Interaction Design",
+        "#AR/VR",
+        "#Mobility"
+      ]
+    },
+    "overview": {
+      "heading": "Project<br>Overview",
+      "p1": "This conceptual solo project was developed as part of my Interaction Design studies.<br>The goal was to combine AR glasses and bicycle controls to create a new kind of cycling: one that is not only functional but also playful, immersive, and emotionally enriching.",
+      "p2": "<strong>How can Augmented Reality enhance the cycling experience – without compromising safety, while simultaneously creating new forms of interaction?</strong>"
+    },
+    "problem": {
+      "heading": "Problem<br>Statement<br>&<br>Design Challenge",
+      "p1": "Current cycling applications rely almost exclusively on smartphones – or, in the case of AR/VR, on stationary indoor training equipment. In real street environments, there is a lack of solutions that integrate digital information in a body-close, safe, and ride-flow-compatible manner.",
+      "p2": "The consequence: anyone accessing digital information while riding constantly switches between physical movement and digital interface. The ride is interrupted, attention fragmented, and the safety risk increases.",
+      "p3": "This led to two central design questions:",
+      "list": [
+        "<strong>What information</strong> is actually relevant while cycling, and what merely creates cognitive load?",
+        "<strong>In what form</strong> can digital content be integrated into the real environment so that it does not interrupt but enriches the riding flow – functionally as well as emotionally?"
+      ]
+    },
+    "concept": {
+      "heading": "Concept:<br>Information<br>Architecture &<br>Interaction<br>System",
+      "p1": "To answer these questions, a conceptual information system was developed comprising four central categories:",
+      "p2": "The four categories form a spectrum from functional safety to emotional enrichment: navigation and environmental data primarily serve safe orientation in traffic, ride data enable self-reflection on one's own performance, and gamification elements create an additional layer of motivation beyond mere transportation.",
+      "p3": "This distinction is not only relevant in terms of content but also structurally, as it forms the basis for two experience modes that users can switch between even while riding:",
+      "modeList": [
+        "<strong>Training Mode</strong> activates navigation, environmental warnings, and ride data – exclusively functional, performance-oriented information.",
+        "<strong>Relaxing Mode</strong> supplements this basis with gamification elements, attractions, and playful content. The focus shifts from performance to exploration."
+      ],
+      "p4": "The interaction concept is oriented around the three phases of a bicycle tour: before, during, and after the ride:",
+      "phaseList": [
+        "<strong>Before and after the ride</strong>, a variety of input methods are available: gesture, voice, and touch control, gaze recognition, and interaction via the bicycle.",
+        "<strong>During the ride</strong>, controls are reduced for safety reasons to voice, gaze, and the bicycle brake as a haptic trigger."
+      ],
+      "p5": "This restriction is a deliberate design decision: in earlier iterations, gesture control during the ride was also considered but was rejected due to potential false triggers and insufficient precision. Interaction does not need to be maximally available at all times – it needs to be contextually appropriate and safe."
+    },
+    "experience": {
+      "heading": "Experience:<br>Demo &<br>Reward<br>Cycle",
+      "p1": "The concept video was filmed on the Frankfurt cycle expressway: a specially built route that provides a safe and continuous riding situation. It shows how information is placed in space, modes are switched, and the user is kept in the riding flow.",
+      "p2": "But the experience does not end with the ride. At the end, users receive a personalized summary of their tour. Virtually collected objects can be used to unlock new riding scenarios or redeemed for real goodies. This creates a motivational cycle that connects real movement with virtual experiences – and transforms cycling into an emotionally charged, playful experience.",
+      "p3": "The connection of space, rhythm, and response is the core of this concept: cycling is not interrupted, but extended."
+    },
+    "reflection": {
+      "heading": "Project<br>Reflection",
+      "p1": "This project was a conceptual attempt to rethink digital interaction in the context of physical movement. The focus was less on technical feasibility and more on the question of <strong>what interaction fundamentally is when it is based not on surfaces but on action, space, and perception.</strong>",
+      "p2": "The controls were deliberately developed in a phase-based manner: not out of formalism, but as a response to different cognitive states. Interaction does not need to be possible at all times – it needs to be contextually appropriate.",
+      "p3": "I see Augmented Reality not as an additional interface, but as a potential tool for amplifying real-world presence. When digital systems do not disturb the connection to the environment but sharpen it – then what emerges is not just information, but meaning.",
+      "p4": "The concept is not finished. But it demonstrates an attitude: interaction begins not in the interface but in the body – and ends not on the screen but in the world."
+    }
+  },
+  "sinfonie": {
+    "hero": {
+      "title": "Sinfonie",
+      "subtitle": "Ecology meets public space.",
+      "intro": "A transformable design system for the Offenbach riverbank – modular, ecological, human.",
+      "tags": [
+        "#Urban Design",
+        "#Product Design",
+        "#Sustainability",
+        "#ICIAD Gold Award 2025"
+      ]
+    },
+    "core": {
+      "heading": "Core<br>Message",
+      "p1": "This is an urban re-design project for the Offenbach riverbank along the Main, aiming to transform underused gray infrastructure into a green, collectively used public space. Through a modular landscape system, an organic interplay between nature and human activity is enabled. The project offers a sustainable and adaptable spatial prototype for future urban development in the context of climate and social change."
+    },
+    "context": {
+      "heading": "Project<br>Context<br>&<br>Design<br>Occasion",
+      "list": [
+        "The Offenbach riverbank is heavily sealed and predominantly used as a parking lot – despite its ecological potential.",
+        "Recurring floods and an outdated levee demonstrate the need for action.",
+        "What is needed is a sustainable redesign that integrates nature and reclaims public space."
+      ],
+      "caption1": "Saturday flea market",
+      "caption2": "In the 1860s the square was almost entirely flooded",
+      "caption3": "Media demand better flood protection",
+      "caption4": "Levee lowering – rejected"
+    },
+    "analysis": {
+      "heading": "Usage<br>Analysis<br>&<br>Observations",
+      "p1": "To make informed design decisions, we analyzed the existing spatial use and ecological tensions on site. Two central problem areas became apparent:",
+      "aTitle": "a. Underutilization of the area",
+      "aText": "Only about 40% of the available parking spaces are regularly used – despite the central location on the riverbank.",
+      "aCaption": "Parking space utilization",
+      "bTitle": "b. Traces of the conflict between city and nature",
+      "bText": "Worn transitions, damaged fences, and traces of flooding reveal the erosion of the interface between human use and natural habitat.",
+      "bCaption": "Nature retreat"
+    },
+    "design": {
+      "heading": "Design<br>Concept<br>&<br>Design<br>Idea",
+      "p1": "Use meets structure. Design emerges where needs are precisely read and spatially implemented.",
+      "needTitle": "Needs as Starting Point",
+      "needText": "We analyzed functional requirements and spatial structures to ensure that the designed space meets diverse needs – both social and ecological.",
+      "gridTitle": "From Need to Structure – Why a Circular Grid System?",
+      "gridText": "To organize the different usage needs – social, ecological, infrastructural – equally within the space, we developed a circular grid system. It breaks with linear, anthropocentric urban logics and enables a new legibility of the transitions between human, space, and ecology.",
+      "gridDesc": "The circular grid is not hierarchical but open, adaptive, and ecologically inspired:",
+      "gridList": [
+        "<strong>Natural logic instead of urban order</strong>: Circles imitate the structure of ecological systems – networked rather than linear.",
+        "<strong>Undefined edges = spaces of possibility</strong>: The overlapping of modules creates fluid transitions between biodiversity and use.",
+        "<strong>Every cell counts</strong>: Each module (Ø 10 m) is an equal building block – whether play area, green island, or bird habitat."
+      ],
+      "gridCaption": "Design grid with human reference. The base grid is built on 25 × 25 cm units. The circular modules (Ø 10 m) are oriented toward movement and dwelling dimensions."
+    },
+    "spatial": {
+      "heading": "Spatial<br>Strategy<br>&<br>System<br>Design",
+      "p1": "<strong>From Grid to Spatial Structure – A Flexible Grid System as the Foundation of Spatial Design</strong>",
+      "p2": "The logic derived from the circular grid system (Ø 10 m) forms the basis of our spatial strategy. On this foundation, the site was divided into three main zones: <strong>Parking, Park, and Plaza.</strong>",
+      "p3": "These zones are not strictly separated but deliberately designed as <strong>overlapping and permeable</strong> – <strong>creating transitions rather than barriers.</strong> The grid dimensioning is based on real user scales such as pedestrians, strollers, bicycles, and vehicles. In this way, the system creates both <strong>spatial orientation</strong> and <strong>functional openness</strong>, and can be transferred to various contexts.",
+      "zoningTitle": "Zoning Diagram",
+      "zoningText": "The grid forms three main zones with fluid transitions: parking, activity zone, and eco-zone.",
+      "zoningCaption": "Clear spatial organization through a flexible, modular system.",
+      "scenesTitle": "Usage Scenes",
+      "scenesText": "The fine-grained grid logic enables passage, lingering, and nature-close experiences within the same system.",
+      "scenesCaption": "Integration of green space and activity areas in situational use.",
+      "programTitle": "Programmatic Diversity",
+      "programText": "The grid can support different social and functional uses – from play to retreat to encounter.",
+      "programCaption": "Multi-layered spatial situations for diverse user groups.",
+      "transformTitle": "Transformation & Adaptation",
+      "transformText": "The space is not conceived as a finished state but as an open system with development potential over time.",
+      "transformCaption": "Use, vegetation, and spatial distribution change dynamically with the urban context."
+    },
+    "material": {
+      "heading": "Materiality<br>&<br>Prototypical<br>Implementation",
+      "p1": "<strong>From Paving Stone to System Idea</strong><br>The paving module is not merely a technical detail but a strategic design driver. Through its transformability, it becomes the interface between micro- and macro-structure, between temporary use and long-term urban transformation.<br><strong>Functional + open + evolutionary = a city ground of the future.</strong>",
+      "p2": "<strong>Modular Logic – buildable, legible, transformable</strong><br>Our paving structure is based on a modular element with differentiable infill. Depending on function and usage context, the material inside can vary: gravel for load-bearing zones, porous substrates for rainwater infiltration, or humus for planting areas. This creates a ground that does not demarcate but mediates – between movement and growth, human and nature.",
+      "p2Caption": "3D-printed model with material variants. Alternating fill materials create fluid transitions.",
+      "p3": "<strong>Structure as Space of Possibility</strong><br>The elements themselves – geometrically simple yet functionally sophisticated – consist of a load-bearing double structure. Their form allows different grid combinations, different load capacities, and different perspectives on what constitutes “ground.”",
+      "p3Caption": "EcoRock – Material & Support Structure. Robust, porous, reusable."
+    },
+    "model": {
+      "heading": "Model<br>Building<br>&<br>Design<br>Reflection",
+      "p1": "<strong>From Concept to Physical Experience</strong><br>Our design was tested not only digitally but also physically. The model-building phase served as a means to make the spatial effects, material transitions, and scale levels tangible. By constructing 1:500 park models, 1:10 paving structure elements, and 1:1 prototypes, we were able to verify how the system behaves – in the hand, in space, and at scale.",
+      "p2": "In doing so, it became apparent:<br><strong>What began as a grid became a spatial body.<br>What was conceived as structure became a medium of experience.</strong>"
+    },
+    "endHero": {
+      "text": "<strong>SINFONIE is not a finished piece, but an open score.</strong><br>The space is not fixed – it is played, inhabited, reimagined. <br> A city that breathes. A system that listens."
+    }
+  },
+  "thispage": {
+    "hero": {
+      "title": "This Page",
+      "subtitle": "How this portfolio was designed and built.",
+      "intro": "A case study on the design of the website you are currently viewing.",
+      "tags": [
+        "#Web Design",
+        "#Vibe Coding",
+        "#Human–AI Collaboration"
+      ]
+    },
+    "coming": {
+      "heading": "Coming<br>Soon",
+      "p1": "This project is currently being documented."
+    }
+  },
+  "journals": {
+    "items": {
+      "catsitting": {
+        "date": "Oct 01, 2025",
+        "title": "From Cat Sitting to User Experience Design"
+      },
+      "fluidAssemblage": {
+        "date": "Feb 28, 2022",
+        "title": "Fluid Assemblage and the Role of the Designer"
+      }
+    }
+  },
+  "catsitting": {
+    "title": "From Cat Sitting to User Experience Design",
+    "p1": "On the way home from a client, something suddenly hit me: over the past few weeks of cat sitting, I had essentially been practicing service design the entire time.",
+    "p2": "I take jobs through <em>Cat in a Flat</em> and look after my clients' cats on-site. From the very first booking, I had developed a fixed routine: arrive, check on the cat's condition, feed, clean, play, air out the apartment, and send the owners photos and videos daily. I had a mental checklist for all of this. I ticked off each completed step and sent a screenshot at the end. At the time, this emerged from pure instinct, simply to avoid forgetting anything. I hadn't thought much of it – it just felt safer.",
+    "p3": "But on the way back, a thought suddenly struck me: isn't this essentially a transparency mechanism?",
+    "p4": "Handing over your own keys and driving away requires an enormous amount of trust. The actual concern of cat owners is not just whether the cat has eaten, but rather the unsettling feeling of uncertainty: “I'm not there, I don't know what's happening, and I have no control.” The screenshot of the checklist and the daily photos therefore satisfy not just an information need but, above all, an emotional one. This is Jakob Nielsen's “visibility of system status” in the real world: you show the user that the system is running. Not because they distrust you, but because uncertainty itself is already incredibly draining.",
+    "p5": "Then something else occurred to me. Before taking on the first job, <em>Cat in a Flat</em> requires a meet-and-greet between client and cat sitter. You meet in person, the client gets an impression of you, you get to know the cat and the apartment, and then both sides decide whether it's a good fit before the keys are handed over. In the platform's logic, this is probably just a safety measure. From a design perspective, it is pure onboarding. Before the user truly relinquishes control, a human foundation of trust must first be established. This prerequisite is essential.",
+    "p6": "What I'm actually doing is, on the surface, cleaning litter boxes and refilling food bowls. At its core, however, it is about managing anxieties. And not those of the cat, but those of the owners.",
+    "p7": "This leads me to a bigger question: how often in product design do we genuinely address users' emotions rather than just checking off their functional requirements? The latter are easy to quantify, verify, and write into a PRD. But that feeling of “I'm not on-site, so I'm worried” is what ultimately drives user behavior. Cat owners are not just paying for an extra pair of hands – they are paying for a sense of security. In service design, there is a term for this: “trust scaffolding.” These are the structural elements that support trust in the early phase of a relationship, such as transparent processes, timely feedback, and following through on commitments. Once trust itself is established, this scaffolding can gradually be dismantled. That is exactly what I achieved with my checklist and photos.",
+    "p8": "“Design is everywhere.” That's easy to say, but to truly “see” it requires a certain practice: you have to dissect everyday experiences like prototypes, decode the underlying logic, and then ask yourself where else this logic might apply. You don't always find an answer, but simply keeping this question in the back of your mind is in itself a wonderful exercise in design thinking."
+  },
+  "fluidAssemblage": {
+    "date": "Feb 28, 2022 (Update Feb 08, 2026)",
+    "title": "Fluid Assemblage and the Role of the Designer",
+    "p1": "I recently read the book <em>Changing Things</em> for an essay. In it, a concept appears: <em>Fluid Assemblage</em>. Quite honestly, for me this is the most accurate term of recent years to describe what digital products actually <em>are</em>.",
+    "p2": "To grasp this more concretely, imagine a smart electric toothbrush. As a <em>Fluid Assemblage</em>, it still looks like a toothbrush from the outside: handle, bristles, maybe a few buttons. But it may contain a small camera that scans your teeth, a tiny CPU for image processing, and a companion app that tells you whether your gums are inflamed, whether you need a dental cleaning – plus the option to share your brushing stats with friends. On the outside, a toothbrush; on the inside, it has long since become a private physician or even a social media platform.",
+    "p3": "This is precisely the core logic of the Fluid Assemblage: <strong>It disguises itself as a homogeneous “whole,” solely to present us with the familiar form of a thing.</strong>",
+    "p4": "The Ship of Theseus is a classic philosophical entry point for understanding this. The wooden planks are replaced piece by piece until no original part remains – is it still the same ship? With digital products, it works in exactly the same way. They start as a Minimum Viable Product (MVP) and iterate onward. Under the hood, they may be completely rebuilt every few months, yet for users it is still “that one app” they open every day. A Fluid Assemblage does not need to be finished and shipped like an industrial product. It updates itself constantly on the digital layer while the physical carrier remains the same. This is an entirely new kind of “making.”",
+    "p5": "The reason such constructs can spread globally with so remarkably little friction lies in their network structure – physical boundaries are virtually irrelevant. When you develop a product today, the target audience is the entire world; localization is often the only hurdle. Once the user base reaches critical mass, the system begins to develop its own ecology and culture, like a living organism. Users from the most diverse cultural backgrounds feed their content and feedback into the system. These differences are gradually smoothed out through horizontal distribution between nodes until a relatively stable whole emerges. Like a forest growing into a climax ecosystem.",
+    "p6": "This is why the Fluid Assemblage also so strongly recalls the swarm intelligence that Kevin Kelly describes in <em>Out of Control</em>: networked, dynamic, adaptive. Its primary characteristic is emergence – the behavior of the whole cannot be predicted from any of its individual parts. And once the thing is large enough, it develops its own tendencies and attitudes. “People lose control over it,” Kelly writes, “and the creators face a dilemma: they will no longer fully own their most brilliant creation.”",
+    "p7": "This loss of control has four dimensions: uncontrollable (the system has its own dynamics; the whole can barely be steered anymore), unpredictable (emergence produces phenomena that have never existed in history), unknowable (the system acts on users, users act back – after enough loops, the whole becomes a black box even for the developers), and non-immediate (cause and effect diverge in time; an impulse needs time to propagate through the network).",
+    "p8": "When I revised these notes recently, the timing could not have been better: TikTok had just come under scrutiny by EU regulators. The core of the allegations revolved around its addictive design – infinite scrolling, autoplay, push notifications, and extremely personalized recommendation algorithms.",
+    "p9": "This is a textbook example of how the system created by us designers – in the broadest sense, meaning not only visually but also the minds behind the algorithms and interaction mechanisms – takes over control and, in turn, reprograms the users. And the crux is: this control is completely invisible to the average user.",
+    "p10": "In purely theoretical terms, TikTok is simply a massive recommender system. But it is every single, mundane like from millions of users that shapes the system's evolution. In return, the system pushes increasingly extreme content that triggers precisely those preferences. This is how filter bubbles (echo chambers) and addiction mechanisms emerge. They were not necessarily designed maliciously from day one – they emerged. At the beginning, there may have been just a set of relatively simple logical rules, but at this scale, the outcome is no longer controllable by anyone – not even by the creators themselves.",
+    "p11": "The greatest variable in a Fluid Assemblage is, quite simply, the human being. User research is essentially nothing more than an attempt to build workable models of this “human” – abstracting behavioral patterns, defining user types, predicting reactions – in order to design a system on that basis. But in complex systems, everything is interconnected. From the outside, one often sees only the “effect” but can barely turn a specific “cause” to produce exactly the desired result. This makes the designer's position extremely fragile: once the system goes live, control slips away piece by piece – directly over to the system itself. Although that's not entirely accurate either, because we designers are simultaneously users who are also shaped by the system. This duality makes the question of “designer responsibility” incredibly complex.",
+    "p12": "When it comes to responsibility, the first reflex is often: if the system is getting out of control, we need harder human interventions. But if you stand there with the attitude of a creator trying to shut the system down, you inevitably tear apart the ecosystem. The system will adapt and rebalance, but certain drastic interventions can crash the entire thing. In reality, bureaucratic processes, business interests, and board decisions intervene as well... Often we are left with no choice but to watch the “effect” unfold while arguing in endless loops about solutions. But that is precisely the normal state of complex systems. Because we cannot steer them precisely, we must feel our way through cautious interventions and observe what happens. This carries risks, it costs something – but it is the only approach that works.",
+    "p13": "The real pain point of designer responsibility thus lies not in the question of “whether we should control the system.” It lies here: <strong>If the control mechanism itself is invisible, how can one even speak of “informed consent”?</strong> When a user taps Like, they are unaware that they are training a machine that will, in return, condition them. This information asymmetry is the core of the problem. We designers may no longer be able to control the system. But we can decide whether to tell users what kind of machinery they are part of – to give them back their right to know, to give them back their agency, their choice, as far as possible.",
+    "p14": "That almost sounds like a cowardly disclaimer. But maintaining transparency is, in itself, already a massive design stance."
+  }
+}

@@ -200,9 +200,9 @@
             
             <!-- Title & Combined Links -->
             <div style="display: flex; flex-direction: column; align-items: flex-start; gap: 15px;">
-                <h1 class="about-title">Hi,<br>ich bin Qianyi Cheng.</h1>
+                <h1 class="about-title" data-i18n="about.title">Hi,<br>ich bin Qianyi Cheng.</h1>
                 <div class="intro-links">
-                    <a href="https://drive.google.com/file/d/1yZ6booRdGSE-_mHz9fk1MnaQH2kwoQws/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="intro-link intro-link-main">CV ↗</a>
+                    <a id="cv-link" href="https://drive.google.com/file/d/1yZ6booRdGSE-_mHz9fk1MnaQH2kwoQws/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="intro-link intro-link-main" data-cv-de="https://drive.google.com/file/d/1yZ6booRdGSE-_mHz9fk1MnaQH2kwoQws/view?usp=drive_link" data-cv-en="cv-en-v2.html">CV ↗</a>
                     <span class="link-separator">·</span>
                     <a href="mailto:chengqianyi2017@outlook.com" class="intro-link intro-link-sub">E-Mail</a>
                     <span class="link-separator">·</span>
@@ -216,25 +216,25 @@
 
             <!-- Bio -->
             <div class="about-section">
-                <h2>Über mich</h2>
-                <p>Ich studiere Interaction Design an der HfG Offenbach und stehe kurz vor meinem Diplom. Gerade suche ich ein Praktikum, bei dem ich wirklich etwas lernen kann.</p>
-                <p>Meine größte Stärke ist nicht ein einzelnes Tool oder eine bestimmte Methode, sondern Verknüpfungen herzustellen. Ich sammle Impulse aus allen Richtungen: Bücher, Gespräche, alltägliche Beobachtungen, fachfremde Felder. Irgendwann verdichten sich diese Fragmente zu Mustern. Der Moment, in dem verstreute Punkte zu einer schlüssigen Idee zusammenfallen, ist der Teil von Gestaltung, der mich am meisten antreibt. Die Synthese. Das Emergente.</p>
+                <h2 data-i18n="about.bio.heading">Über mich</h2>
+                <p data-i18n="about.bio.p1">Ich studiere Interaction Design an der HfG Offenbach und stehe kurz vor meinem Diplom. Gerade suche ich ein Praktikum, bei dem ich wirklich etwas lernen kann.</p>
+                <p data-i18n="about.bio.p2">Meine größte Stärke ist nicht ein einzelnes Tool oder eine bestimmte Methode, sondern Verknüpfungen herzustellen. Ich sammle Impulse aus allen Richtungen: Bücher, Gespräche, alltägliche Beobachtungen, fachfremde Felder. Irgendwann verdichten sich diese Fragmente zu Mustern. Der Moment, in dem verstreute Punkte zu einer schlüssigen Idee zusammenfallen, ist der Teil von Gestaltung, der mich am meisten antreibt. Die Synthese. Das Emergente.</p>
             </div>
 
             <!-- Design Approach -->
             <div class="about-section">
-                <h2>Wie ich denke</h2>
-                <p>Ich bin eine Generalistin mit ausgeprägter Mustererkennung. Ich sehe Zusammenhänge zwischen Dingen, die auf den ersten Blick nichts miteinander zu tun haben, und habe gelernt, diesem Instinkt zu vertrauen. Ich eigne mir Neues schnell an, denke über Disziplinen hinweg und bringe unerwartete Referenzen in Projekte ein.</p>
-                <p>Aktuell beschäftige ich mich mit der Frage, wie KI die Denkweise von Designer:innen verändert. Nicht nur als Werkzeug, sondern als gestalterisches Material. Vibe Coding, KI-gestützte Ideenfindung, Mensch-KI-Kollaboration: Das sind für mich keine Schlagwörter, sondern meine tatsächliche Arbeitsweise.</p>
+                <h2 data-i18n="about.approach.heading">Wie ich denke</h2>
+                <p data-i18n="about.approach.p1">Ich bin eine Generalistin mit ausgeprägter Mustererkennung. Ich sehe Zusammenhänge zwischen Dingen, die auf den ersten Blick nichts miteinander zu tun haben, und habe gelernt, diesem Instinkt zu vertrauen. Ich eigne mir Neues schnell an, denke über Disziplinen hinweg und bringe unerwartete Referenzen in Projekte ein.</p>
+                <p data-i18n="about.approach.p2">Aktuell beschäftige ich mich mit der Frage, wie KI die Denkweise von Designer:innen verändert. Nicht nur als Werkzeug, sondern als gestalterisches Material. Vibe Coding, KI-gestützte Ideenfindung, Mensch-KI-Kollaboration: Das sind für mich keine Schlagwörter, sondern meine tatsächliche Arbeitsweise.</p>
             </div>
 
             <!-- Personal Touch (Cat) -->
             <div class="about-section">
-                <h2>Off-Screen</h2>
-                <p>Wenn ich nicht gerade gestalte, wird meine Zeit größtenteils von meinem Maine-Coon-Vorgesetzten verwaltet: <strong>Cheng Cai (程财)</strong>.</p>
+                <h2 data-i18n="about.offscreen.heading">Off-Screen</h2>
+                <p data-i18n="about.offscreen.p1">Wenn ich nicht gerade gestalte, wird meine Zeit größtenteils von meinem Maine-Coon-Vorgesetzten verwaltet: <strong>Cheng Cai (程财)</strong>.</p>
                 <div class="cat-container">
                     <img src="assets/about-me/cai.jpg" alt="Cheng Cai the Maine Coon" class="cat-img">
-                    <small style="color: #666; font-style: italic;">Chefkritiker. Flauschig. Unerbittlich.</small>
+                    <small style="color: #666; font-style: italic;" data-i18n="about.offscreen.catCaption">Chefkritiker. Flauschig. Unerbittlich.</small>
                 </div>
             </div>
 
@@ -243,9 +243,10 @@
 
     <!-- Footer -->
     <div class="footer">
-        <div>Based in Germany</div>
-        <div>© 2026 Qianyi Cheng</div>
+        <div data-i18n="common.footer.location">Based in Germany</div>
+        <div data-i18n="common.footer.copyright">© 2026 Qianyi Cheng</div>
     </div>
 
+<script src="i18n.js"></script>
 </body>
 </html>

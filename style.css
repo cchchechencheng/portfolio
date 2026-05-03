@@ -169,6 +169,10 @@
         text-decoration: none;
     }
 
+    .sub-item[hidden] {
+        display: none;
+    }
+
     .sub-item:hover {
         color: var(--text-color);
         transform: translateX(10px);
@@ -351,6 +355,54 @@
         margin-bottom: 40px;
         display: block;
         font-style: italic;
+    }
+
+    /* --- Language Toggle --- */
+    .lang-toggle {
+        position: fixed;
+        top: 0;
+        right: 40px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+        z-index: 1001;
+        font-size: 14px;
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .lang-btn {
+        background: none;
+        border: none;
+        cursor: pointer;
+        font-family: "Montserrat", sans-serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #888;
+        padding: 4px 2px;
+        transition: color 0.3s ease;
+    }
+
+    .lang-btn:hover { color: #1a1a1a; }
+    .lang-btn.active { color: #1a1a1a; font-weight: 600; }
+
+    .lang-sep {
+        color: #ccc;
+        font-size: 14px;
+        user-select: none;
+    }
+
+    body.dark-mode .lang-btn { color: rgba(255,255,255,0.5); }
+    body.dark-mode .lang-btn:hover,
+    body.dark-mode .lang-btn.active { color: #fff; }
+    body.dark-mode .lang-sep { color: rgba(255,255,255,0.3); }
+
+    /* FOUC prevention removed — caused hidden elements when fetch had issues */
+
+    .project-nav { justify-content: space-between; }
+
+    @media (max-width: 768px) {
+        .lang-toggle { right: 20px; }
     }
 
     /* --- 项目页 Mobile Responsive --- */
